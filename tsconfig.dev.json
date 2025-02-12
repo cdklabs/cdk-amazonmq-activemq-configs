@@ -26,12 +26,27 @@
     "target": "ES2019"
   },
   "include": [
-    "src/**/*.ts",
-    "test/**/*.ts",
     ".projenrc.ts",
     "projenrc/**/*.ts"
   ],
   "exclude": [
     "node_modules"
+  ],
+  "references": [
+    {
+      "path": "packages/@cdklabs/xsd2jsii"
+    },
+    {
+      "path": "packages/@cdklabs/cdk-amazonmq-activemq-config-v5_15_16"
+    },
+    {
+      "path": "packages/@cdklabs/cdk-amazonmq-activemq-config-v5_16_7"
+    },
+    {
+      "path": "packages/@cdklabs/cdk-amazonmq-activemq-config-v5_17_6"
+    },
+    {
+      "path": "packages/@cdklabs/cdk-amazonmq-activemq-config-v5_18_4"
+    }
   ]
 }

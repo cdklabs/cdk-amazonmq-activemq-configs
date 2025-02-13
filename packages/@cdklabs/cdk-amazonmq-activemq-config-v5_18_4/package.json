@@ -29,7 +29,7 @@
   },
   "author": {
     "name": "AWS",
-    "email": "aws-cdk-dev@amazon.com",
+    "email": "cdk-amazonmq-maintainers@amazon.com",
     "organization": false
   },
   "devDependencies": {

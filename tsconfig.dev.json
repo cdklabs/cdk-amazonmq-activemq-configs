@@ -8,7 +8,8 @@
     "inlineSourceMap": true,
     "inlineSources": true,
     "lib": [
-      "es2019"
+      "ES2021",
+      "ES2021.String"
     ],
     "module": "CommonJS",
     "noEmitOnError": false,

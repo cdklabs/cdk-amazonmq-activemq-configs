@@ -1,4 +1,4 @@
-# Amazon MQ for ActiveMQ XML configuration {{VERSION}} bindings
+# Amazon MQ for ActiveMQ XML configuration v{{VERSION}} bindings
 
 <!--BEGIN STABILITY BANNER-->
 

@@ -17,7 +17,7 @@
 
 <!--END STABILITY BANNER-->
 
-This package provides strongly-typed configuration bindings for Amazon MQ for ActiveMQ version {{VERSION}}. It enables you to define your ActiveMQ broker configurations in code instead of raw XML.
+This package provides strongly-typed configuration bindings for Amazon MQ for ActiveMQ version 5.18.4. It enables you to define your ActiveMQ broker configurations in code instead of raw XML.
 
 The types in this library are intended to be used with the [@cdklabs/cdk-amazonmq](https://github.com/cdklabs/cdk-amazonmq) library and allow for providing strongly-typed configuration of ActiveMQ brokers that is generated from [the XML schema definition tailored for the Amazon MQ](https://docs.aws.amazon.com/amazon-mq/latest/developer-guide/amazon-mq-broker-configuration-parameters.html#working-with-spring-xml-configuration-files).
 

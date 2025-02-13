@@ -22,6 +22,11 @@ const project = new CdkLabsMonorepo({
   name: "@cdklabs/cdk-amazonmq-activemq-configs",
   github: true,
   release: true,
+  tsconfigDev: {
+    compilerOptions: {
+      lib: ["ES2021", "ES2021.String"]
+    }
+  }
 });
 
 new SourceUpdate(project, {
@@ -82,7 +87,7 @@ for (const schema of schemas) {
     stability,
     name: `@cdklabs/cdk-amazonmq-activemq-config-v${MAJOR}_${MINOR}_${PATCH}`,
     authorName: "AWS",
-    authorEmail: "aws-cdk-dev@amazon.com",
+    authorEmail: "cdk-amazonmq-maintainers@amazon.com",
     repository:
       "https://github.com/cdklabs/cdk-amazonmq-activemq-configs",
     devDeps: [xsd2jsii.package.packageName, 'xsd-schema-validator'],
@@ -95,7 +100,7 @@ for (const schema of schemas) {
   new TextFile(schemaProject, "README.md", {
     marker: true,
     committed: true,
-    lines: schemaReadmeTemplate.replace('{{VERSION}}', `v${MAJOR}.${MINOR}.${PATCH}`).split('\n')
+    lines: schemaReadmeTemplate.replaceAll('{{VERSION}}', `${MAJOR}.${MINOR}.${PATCH}`).split('\n')
   })
 
   new Jsii(schemaProject, {

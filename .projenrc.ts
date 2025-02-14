@@ -85,7 +85,7 @@ for (const schema of schemas) {
   const schemaProject = new TypeScriptWorkspace({
     parent: project,
     stability,
-    name: `@cdklabs/cdk-amazonmq-activemq-config-v${MAJOR}_${MINOR}_${PATCH}`,
+    name: `@cdklabs/cdk-amazonmq-activemq-config-v${MAJOR}-${MINOR}-${PATCH}`,
     authorName: "AWS",
     authorEmail: "cdk-amazonmq-maintainers@amazon.com",
     repository:
@@ -101,24 +101,24 @@ for (const schema of schemas) {
     marker: true,
     committed: true,
     lines: schemaReadmeTemplate.replaceAll('{{VERSION}}', `${MAJOR}.${MINOR}.${PATCH}`).split('\n')
-  })
+  });
 
   new Jsii(schemaProject, {
     stability,
-    jsiiVersion: "~5.5.0",
+    jsiiVersion: "~5.7.0",
     publishToPypi: {
-      distName: `cdklabs.cdk-amazonmq-activemq-config-v${MAJOR}_${MINOR}_${PATCH}`,
-      module: `cdklabs.cdk-amazonmq-activemq-config-v${MAJOR}_${MINOR}_${PATCH}`,
+      distName: `cdklabs.cdk-amazonmq-activemq-config-v${MAJOR}-${MINOR}-${PATCH}`,
+      module: `cdklabs.cdk-amazonmq-activemq-config-v${MAJOR}-${MINOR}-${PATCH}`,
     },
     publishToNuget: {
-      dotNetNamespace: `Cdklabs.CdkAmazonmq.ActiveMqConfigV${MAJOR}_${MINOR}_${PATCH}`,
-      packageId: `Cdklabs.CdkAmazonmq.ActiveMqConfigV${MAJOR}_${MINOR}_${PATCH}`,
+      dotNetNamespace: `Cdklabs.CdkAmazonmq.ActiveMqConfig.V${MAJOR}_${MINOR}_${PATCH}`,
+      packageId: `Cdklabs.CdkAmazonmq.ActiveMqConfig.V${MAJOR}-${MINOR}-${PATCH}`,
     },
-    // publishToMaven: {
-    //   javaPackage: `io.github.cdklabs.cdk-amazonmq-activemq-config-v${MAJOR}_${MINOR}_${PATCH}`,
-    //   mavenGroupId: "io.github.cdklabs",
-    //   mavenArtifactId: `cdk-amazonmq-activemq-config-v${MAJOR}_${MINOR}_${PATCH}`,
-    // },
+    publishToMaven: {
+      javaPackage: `io.github.cdklabs.cdkamazonmqactivemqconfig.v${MAJOR}_${MINOR}_${PATCH}`,
+      mavenGroupId: "io.github.cdklabs",
+      mavenArtifactId: `cdk-amazonmq-activemq-config-v${MAJOR}-${MINOR}-${PATCH}`,
+    },
     // publishToGo: {
     //   moduleName: `github.com/cdklabs/cdk-amazonmq-activemq-config-v${MAJOR}_${MINOR}_${PATCH}`,
     // },
@@ -173,6 +173,10 @@ for (const schema of schemas) {
 }
 
 project.synth();
+
+// function changeDelimiter(str: string, delim: string) {
+//   return str.split('-').join(delim);
+// }
 
 // const project = new CdklabsConstructLibrary({
 //   author: "AWS",

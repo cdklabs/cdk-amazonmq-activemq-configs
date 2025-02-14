@@ -17,6 +17,7 @@
     "package": "npx projen package",
     "package-all": "npx projen package-all",
     "package:dotnet": "npx projen package:dotnet",
+    "package:java": "npx projen package:java",
     "package:js": "npx projen package:js",
     "package:python": "npx projen package:python",
     "post-compile": "npx projen post-compile",
@@ -46,10 +47,10 @@
     "eslint-plugin-prettier": "^5.2.3",
     "jest": "^29.7.0",
     "jest-junit": "^16",
-    "jsii": "~5.5.0",
+    "jsii": "~5.7.0",
     "jsii-diff": "^1.106.0",
     "jsii-pacmak": "^1.106.0",
-    "jsii-rosetta": "~5.5.0",
+    "jsii-rosetta": "~5.7.0",
     "prettier": "^3.5.0",
     "projen": "^0.91.9",
     "ts-jest": "^29.2.5",
@@ -111,13 +112,20 @@
   "jsii": {
     "outdir": "dist",
     "targets": {
+      "java": {
+        "package": "io.github.cdklabs.cdkamazonmqactivemqconfig.v5_18_4",
+        "maven": {
+          "groupId": "io.github.cdklabs",
+          "artifactId": "cdk-amazonmq-activemq-config-v5-18-4"
+        }
+      },
       "python": {
-        "distName": "cdklabs.cdk-amazonmq-activemq-config-v5_18_4",
-        "module": "cdklabs.cdk-amazonmq-activemq-config-v5_18_4"
+        "distName": "cdklabs.cdk-amazonmq-activemq-config-v5-18-4",
+        "module": "cdklabs.cdk-amazonmq-activemq-config-v5-18-4"
       },
       "dotnet": {
-        "namespace": "Cdklabs.CdkAmazonmq.ActiveMqConfigV5_18_4",
-        "packageId": "Cdklabs.CdkAmazonmq.ActiveMqConfigV5_18_4"
+        "namespace": "Cdklabs.CdkAmazonmq.ActiveMqConfig.V5_18_4",
+        "packageId": "Cdklabs.CdkAmazonmq.ActiveMqConfig.V5-18-4"
       }
     },
     "tsc": {

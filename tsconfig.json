@@ -34,16 +34,16 @@
       "path": "packages/@cdklabs/xsd2jsii"
     },
     {
-      "path": "packages/@cdklabs/cdk-amazonmq-activemq-config-v5_15_16"
+      "path": "packages/@cdklabs/cdk-amazonmq-activemq-config-v5-15-16"
     },
     {
-      "path": "packages/@cdklabs/cdk-amazonmq-activemq-config-v5_16_7"
+      "path": "packages/@cdklabs/cdk-amazonmq-activemq-config-v5-16-7"
     },
     {
-      "path": "packages/@cdklabs/cdk-amazonmq-activemq-config-v5_17_6"
+      "path": "packages/@cdklabs/cdk-amazonmq-activemq-config-v5-17-6"
     },
     {
-      "path": "packages/@cdklabs/cdk-amazonmq-activemq-config-v5_18_4"
+      "path": "packages/@cdklabs/cdk-amazonmq-activemq-config-v5-18-4"
     }
   ]
 }

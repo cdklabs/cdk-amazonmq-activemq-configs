@@ -1,9 +1,9 @@
 {
-  "name": "@cdklabs/cdk-amazonmq-activemq-config-v5_16_7",
+  "name": "@cdklabs/cdk-amazonmq-activemq-config-v5-16-7",
   "repository": {
     "type": "git",
     "url": "https://github.com/cdklabs/cdk-amazonmq-activemq-configs",
-    "directory": "packages/@cdklabs/cdk-amazonmq-activemq-config-v5_16_7"
+    "directory": "packages/@cdklabs/cdk-amazonmq-activemq-config-v5-16-7"
   },
   "scripts": {
     "build": "npx projen build",
@@ -51,8 +51,8 @@
     "jsii-diff": "^1.106.0",
     "jsii-pacmak": "^1.106.0",
     "jsii-rosetta": "~5.7.0",
-    "prettier": "^3.5.0",
-    "projen": "^0.91.9",
+    "prettier": "^3.5.1",
+    "projen": "^0.91.10",
     "ts-jest": "^29.2.5",
     "typescript": "^5.7.3",
     "xsd-schema-validator": "^0.11.0",

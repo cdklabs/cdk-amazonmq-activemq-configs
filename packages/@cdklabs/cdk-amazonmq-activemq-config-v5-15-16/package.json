@@ -1,9 +1,9 @@
 {
-  "name": "@cdklabs/cdk-amazonmq-activemq-config-v5_17_6",
+  "name": "@cdklabs/cdk-amazonmq-activemq-config-v5-15-16",
   "repository": {
     "type": "git",
     "url": "https://github.com/cdklabs/cdk-amazonmq-activemq-configs",
-    "directory": "packages/@cdklabs/cdk-amazonmq-activemq-config-v5_17_6"
+    "directory": "packages/@cdklabs/cdk-amazonmq-activemq-config-v5-15-16"
   },
   "scripts": {
     "build": "npx projen build",
@@ -51,8 +51,8 @@
     "jsii-diff": "^1.106.0",
     "jsii-pacmak": "^1.106.0",
     "jsii-rosetta": "~5.7.0",
-    "prettier": "^3.5.0",
-    "projen": "^0.91.9",
+    "prettier": "^3.5.1",
+    "projen": "^0.91.10",
     "ts-jest": "^29.2.5",
     "typescript": "^5.7.3",
     "xsd-schema-validator": "^0.11.0",
@@ -113,19 +113,19 @@
     "outdir": "dist",
     "targets": {
       "java": {
-        "package": "io.github.cdklabs.cdkamazonmqactivemqconfig.v5_17_6",
+        "package": "io.github.cdklabs.cdkamazonmqactivemqconfig.v5_15_16",
         "maven": {
           "groupId": "io.github.cdklabs",
-          "artifactId": "cdk-amazonmq-activemq-config-v5-17-6"
+          "artifactId": "cdk-amazonmq-activemq-config-v5-15-16"
         }
       },
       "python": {
-        "distName": "cdklabs.cdk-amazonmq-activemq-config-v5-17-6",
-        "module": "cdklabs.cdk-amazonmq-activemq-config-v5-17-6"
+        "distName": "cdklabs.cdk-amazonmq-activemq-config-v5-15-16",
+        "module": "cdklabs.cdk-amazonmq-activemq-config-v5-15-16"
       },
       "dotnet": {
-        "namespace": "Cdklabs.CdkAmazonmq.ActiveMqConfig.V5_17_6",
-        "packageId": "Cdklabs.CdkAmazonmq.ActiveMqConfig.V5-17-6"
+        "namespace": "Cdklabs.CdkAmazonmq.ActiveMqConfig.V5_15_16",
+        "packageId": "Cdklabs.CdkAmazonmq.ActiveMqConfig.V5-15-16"
       }
     },
     "tsc": {

@@ -13,10 +13,10 @@ jobs:
       contents: write
     outputs:
       latest_commit: ${{ steps.git_remote.outputs.latest_commit }}
-      publish-cdklabs-cdk-amazonmq-activemq-config-v5_15_16: ${{ steps.check-publish-cdklabs-cdk-amazonmq-activemq-config-v5_15_16.outputs.publish }}
-      publish-cdklabs-cdk-amazonmq-activemq-config-v5_16_7: ${{ steps.check-publish-cdklabs-cdk-amazonmq-activemq-config-v5_16_7.outputs.publish }}
-      publish-cdklabs-cdk-amazonmq-activemq-config-v5_17_6: ${{ steps.check-publish-cdklabs-cdk-amazonmq-activemq-config-v5_17_6.outputs.publish }}
-      publish-cdklabs-cdk-amazonmq-activemq-config-v5_18_4: ${{ steps.check-publish-cdklabs-cdk-amazonmq-activemq-config-v5_18_4.outputs.publish }}
+      publish-cdklabs-cdk-amazonmq-activemq-config-v5-15-16: ${{ steps.check-publish-cdklabs-cdk-amazonmq-activemq-config-v5-15-16.outputs.publish }}
+      publish-cdklabs-cdk-amazonmq-activemq-config-v5-16-7: ${{ steps.check-publish-cdklabs-cdk-amazonmq-activemq-config-v5-16-7.outputs.publish }}
+      publish-cdklabs-cdk-amazonmq-activemq-config-v5-17-6: ${{ steps.check-publish-cdklabs-cdk-amazonmq-activemq-config-v5-17-6.outputs.publish }}
+      publish-cdklabs-cdk-amazonmq-activemq-config-v5-18-4: ${{ steps.check-publish-cdklabs-cdk-amazonmq-activemq-config-v5-18-4.outputs.publish }}
     env:
       CI: "true"
     steps:
@@ -36,81 +36,81 @@ jobs:
         run: yarn install --check-files --frozen-lockfile
       - name: release
         run: npx projen release
-      - id: check-publish-cdklabs-cdk-amazonmq-activemq-config-v5_15_16
+      - id: check-publish-cdklabs-cdk-amazonmq-activemq-config-v5-15-16
         run: (git ls-remote -q --exit-code --tags origin $(cat dist/releasetag.txt) && (echo "publish=false" >> $GITHUB_OUTPUT)) || echo "publish=true" >> $GITHUB_OUTPUT
-        working-directory: packages/@cdklabs/cdk-amazonmq-activemq-config-v5_15_16
-      - id: check-publish-cdklabs-cdk-amazonmq-activemq-config-v5_16_7
+        working-directory: packages/@cdklabs/cdk-amazonmq-activemq-config-v5-15-16
+      - id: check-publish-cdklabs-cdk-amazonmq-activemq-config-v5-16-7
         run: (git ls-remote -q --exit-code --tags origin $(cat dist/releasetag.txt) && (echo "publish=false" >> $GITHUB_OUTPUT)) || echo "publish=true" >> $GITHUB_OUTPUT
-        working-directory: packages/@cdklabs/cdk-amazonmq-activemq-config-v5_16_7
-      - id: check-publish-cdklabs-cdk-amazonmq-activemq-config-v5_17_6
+        working-directory: packages/@cdklabs/cdk-amazonmq-activemq-config-v5-16-7
+      - id: check-publish-cdklabs-cdk-amazonmq-activemq-config-v5-17-6
         run: (git ls-remote -q --exit-code --tags origin $(cat dist/releasetag.txt) && (echo "publish=false" >> $GITHUB_OUTPUT)) || echo "publish=true" >> $GITHUB_OUTPUT
-        working-directory: packages/@cdklabs/cdk-amazonmq-activemq-config-v5_17_6
-      - id: check-publish-cdklabs-cdk-amazonmq-activemq-config-v5_18_4
+        working-directory: packages/@cdklabs/cdk-amazonmq-activemq-config-v5-17-6
+      - id: check-publish-cdklabs-cdk-amazonmq-activemq-config-v5-18-4
         run: (git ls-remote -q --exit-code --tags origin $(cat dist/releasetag.txt) && (echo "publish=false" >> $GITHUB_OUTPUT)) || echo "publish=true" >> $GITHUB_OUTPUT
-        working-directory: packages/@cdklabs/cdk-amazonmq-activemq-config-v5_18_4
+        working-directory: packages/@cdklabs/cdk-amazonmq-activemq-config-v5-18-4
       - name: Check for new commits
         id: git_remote
         run: echo "latest_commit=$(git ls-remote origin -h ${{ github.ref }} | cut -f1)" >> $GITHUB_OUTPUT
-      - name: "@cdklabs/cdk-amazonmq-activemq-config-v5_15_16: Backup artifact permissions"
+      - name: "@cdklabs/cdk-amazonmq-activemq-config-v5-15-16: Backup artifact permissions"
         if: ${{ steps.git_remote.outputs.latest_commit == github.sha }}
         run: cd dist && getfacl -R . > permissions-backup.acl
         continue-on-error: true
-        working-directory: packages/@cdklabs/cdk-amazonmq-activemq-config-v5_15_16
-      - name: "@cdklabs/cdk-amazonmq-activemq-config-v5_15_16: Upload artifact"
+        working-directory: packages/@cdklabs/cdk-amazonmq-activemq-config-v5-15-16
+      - name: "@cdklabs/cdk-amazonmq-activemq-config-v5-15-16: Upload artifact"
         if: ${{ steps.git_remote.outputs.latest_commit == github.sha }}
         uses: actions/upload-artifact@v4.4.0
         with:
-          name: cdklabs-cdk-amazonmq-activemq-config-v5_15_16_build-artifact
-          path: packages/@cdklabs/cdk-amazonmq-activemq-config-v5_15_16/dist
+          name: cdklabs-cdk-amazonmq-activemq-config-v5-15-16_build-artifact
+          path: packages/@cdklabs/cdk-amazonmq-activemq-config-v5-15-16/dist
           overwrite: true
-      - name: "@cdklabs/cdk-amazonmq-activemq-config-v5_16_7: Backup artifact permissions"
+      - name: "@cdklabs/cdk-amazonmq-activemq-config-v5-16-7: Backup artifact permissions"
         if: ${{ steps.git_remote.outputs.latest_commit == github.sha }}
         run: cd dist && getfacl -R . > permissions-backup.acl
         continue-on-error: true
-        working-directory: packages/@cdklabs/cdk-amazonmq-activemq-config-v5_16_7
-      - name: "@cdklabs/cdk-amazonmq-activemq-config-v5_16_7: Upload artifact"
+        working-directory: packages/@cdklabs/cdk-amazonmq-activemq-config-v5-16-7
+      - name: "@cdklabs/cdk-amazonmq-activemq-config-v5-16-7: Upload artifact"
         if: ${{ steps.git_remote.outputs.latest_commit == github.sha }}
         uses: actions/upload-artifact@v4.4.0
         with:
-          name: cdklabs-cdk-amazonmq-activemq-config-v5_16_7_build-artifact
-          path: packages/@cdklabs/cdk-amazonmq-activemq-config-v5_16_7/dist
+          name: cdklabs-cdk-amazonmq-activemq-config-v5-16-7_build-artifact
+          path: packages/@cdklabs/cdk-amazonmq-activemq-config-v5-16-7/dist
           overwrite: true
-      - name: "@cdklabs/cdk-amazonmq-activemq-config-v5_17_6: Backup artifact permissions"
+      - name: "@cdklabs/cdk-amazonmq-activemq-config-v5-17-6: Backup artifact permissions"
         if: ${{ steps.git_remote.outputs.latest_commit == github.sha }}
         run: cd dist && getfacl -R . > permissions-backup.acl
         continue-on-error: true
-        working-directory: packages/@cdklabs/cdk-amazonmq-activemq-config-v5_17_6
-      - name: "@cdklabs/cdk-amazonmq-activemq-config-v5_17_6: Upload artifact"
+        working-directory: packages/@cdklabs/cdk-amazonmq-activemq-config-v5-17-6
+      - name: "@cdklabs/cdk-amazonmq-activemq-config-v5-17-6: Upload artifact"
         if: ${{ steps.git_remote.outputs.latest_commit == github.sha }}
         uses: actions/upload-artifact@v4.4.0
         with:
-          name: cdklabs-cdk-amazonmq-activemq-config-v5_17_6_build-artifact
-          path: packages/@cdklabs/cdk-amazonmq-activemq-config-v5_17_6/dist
+          name: cdklabs-cdk-amazonmq-activemq-config-v5-17-6_build-artifact
+          path: packages/@cdklabs/cdk-amazonmq-activemq-config-v5-17-6/dist
           overwrite: true
-      - name: "@cdklabs/cdk-amazonmq-activemq-config-v5_18_4: Backup artifact permissions"
+      - name: "@cdklabs/cdk-amazonmq-activemq-config-v5-18-4: Backup artifact permissions"
         if: ${{ steps.git_remote.outputs.latest_commit == github.sha }}
         run: cd dist && getfacl -R . > permissions-backup.acl
         continue-on-error: true
-        working-directory: packages/@cdklabs/cdk-amazonmq-activemq-config-v5_18_4
-      - name: "@cdklabs/cdk-amazonmq-activemq-config-v5_18_4: Upload artifact"
+        working-directory: packages/@cdklabs/cdk-amazonmq-activemq-config-v5-18-4
+      - name: "@cdklabs/cdk-amazonmq-activemq-config-v5-18-4: Upload artifact"
         if: ${{ steps.git_remote.outputs.latest_commit == github.sha }}
         uses: actions/upload-artifact@v4.4.0
         with:
-          name: cdklabs-cdk-amazonmq-activemq-config-v5_18_4_build-artifact
-          path: packages/@cdklabs/cdk-amazonmq-activemq-config-v5_18_4/dist
+          name: cdklabs-cdk-amazonmq-activemq-config-v5-18-4_build-artifact
+          path: packages/@cdklabs/cdk-amazonmq-activemq-config-v5-18-4/dist
           overwrite: true
-  cdklabs-cdk-amazonmq-activemq-config-v5_15_16_release_github:
-    name: "@cdklabs/cdk-amazonmq-activemq-config-v5_15_16: Publish to GitHub Releases"
+  cdklabs-cdk-amazonmq-activemq-config-v5-15-16_release_github:
+    name: "@cdklabs/cdk-amazonmq-activemq-config-v5-15-16: Publish to GitHub Releases"
     needs:
       - release
-      - cdklabs-cdk-amazonmq-activemq-config-v5_15_16_release_npm
-      - cdklabs-cdk-amazonmq-activemq-config-v5_15_16_release_maven
-      - cdklabs-cdk-amazonmq-activemq-config-v5_15_16_release_pypi
-      - cdklabs-cdk-amazonmq-activemq-config-v5_15_16_release_nuget
+      - cdklabs-cdk-amazonmq-activemq-config-v5-15-16_release_npm
+      - cdklabs-cdk-amazonmq-activemq-config-v5-15-16_release_maven
+      - cdklabs-cdk-amazonmq-activemq-config-v5-15-16_release_pypi
+      - cdklabs-cdk-amazonmq-activemq-config-v5-15-16_release_nuget
     runs-on: ubuntu-latest
     permissions:
       contents: write
-    if: ${{ needs.release.outputs.latest_commit == github.sha && needs.release.outputs.publish-cdklabs-cdk-amazonmq-activemq-config-v5_15_16 == 'true' }}
+    if: ${{ needs.release.outputs.latest_commit == github.sha && needs.release.outputs.publish-cdklabs-cdk-amazonmq-activemq-config-v5-15-16 == 'true' }}
     steps:
       - uses: actions/setup-node@v4
         with:
@@ -118,7 +118,7 @@ jobs:
       - name: Download build artifacts
         uses: actions/download-artifact@v4
         with:
-          name: cdklabs-cdk-amazonmq-activemq-config-v5_15_16_build-artifact
+          name: cdklabs-cdk-amazonmq-activemq-config-v5-15-16_build-artifact
           path: dist
       - name: Restore build artifact permissions
         run: cd dist && setfacl --restore=permissions-backup.acl
@@ -129,14 +129,14 @@ jobs:
           GITHUB_REPOSITORY: ${{ github.repository }}
           GITHUB_REF: ${{ github.sha }}
         run: errout=$(mktemp); gh release create $(cat dist/releasetag.txt) -R $GITHUB_REPOSITORY -F dist/changelog.md -t $(cat dist/releasetag.txt) --target $GITHUB_REF 2> $errout && true; exitcode=$?; if [ $exitcode -ne 0 ] && ! grep -q "Release.tag_name already exists" $errout; then cat $errout; exit $exitcode; fi
-  cdklabs-cdk-amazonmq-activemq-config-v5_15_16_release_npm:
-    name: "@cdklabs/cdk-amazonmq-activemq-config-v5_15_16: Publish to npm"
+  cdklabs-cdk-amazonmq-activemq-config-v5-15-16_release_npm:
+    name: "@cdklabs/cdk-amazonmq-activemq-config-v5-15-16: Publish to npm"
     needs: release
     runs-on: ubuntu-latest
     permissions:
       id-token: write
       contents: read
-    if: ${{ needs.release.outputs.latest_commit == github.sha && needs.release.outputs.publish-cdklabs-cdk-amazonmq-activemq-config-v5_15_16 == 'true' }}
+    if: ${{ needs.release.outputs.latest_commit == github.sha && needs.release.outputs.publish-cdklabs-cdk-amazonmq-activemq-config-v5-15-16 == 'true' }}
     steps:
       - uses: actions/setup-node@v4
         with:
@@ -144,7 +144,7 @@ jobs:
       - name: Download build artifacts
         uses: actions/download-artifact@v4
         with:
-          name: cdklabs-cdk-amazonmq-activemq-config-v5_15_16_build-artifact
+          name: cdklabs-cdk-amazonmq-activemq-config-v5-15-16_build-artifact
           path: dist
       - name: Restore build artifact permissions
         run: cd dist && setfacl --restore=permissions-backup.acl
@@ -156,13 +156,13 @@ jobs:
           NPM_CONFIG_PROVENANCE: "true"
           NPM_TOKEN: ${{ secrets.NPM_TOKEN }}
         run: npx -p publib@latest publib-npm
-  cdklabs-cdk-amazonmq-activemq-config-v5_15_16_release_maven:
-    name: "@cdklabs/cdk-amazonmq-activemq-config-v5_15_16: Publish to Maven Central"
+  cdklabs-cdk-amazonmq-activemq-config-v5-15-16_release_maven:
+    name: "@cdklabs/cdk-amazonmq-activemq-config-v5-15-16: Publish to Maven Central"
     needs: release
     runs-on: ubuntu-latest
     permissions:
       contents: read
-    if: ${{ needs.release.outputs.latest_commit == github.sha && needs.release.outputs.publish-cdklabs-cdk-amazonmq-activemq-config-v5_15_16 == 'true' }}
+    if: ${{ needs.release.outputs.latest_commit == github.sha && needs.release.outputs.publish-cdklabs-cdk-amazonmq-activemq-config-v5-15-16 == 'true' }}
     steps:
       - uses: actions/setup-java@v4
         with:
@@ -174,7 +174,7 @@ jobs:
       - name: Download build artifacts
         uses: actions/download-artifact@v4
         with:
-          name: cdklabs-cdk-amazonmq-activemq-config-v5_15_16_build-artifact
+          name: cdklabs-cdk-amazonmq-activemq-config-v5-15-16_build-artifact
           path: dist
       - name: Restore build artifact permissions
         run: cd dist && setfacl --restore=permissions-backup.acl
@@ -187,13 +187,13 @@ jobs:
           MAVEN_USERNAME: ${{ secrets.MAVEN_USERNAME }}
           MAVEN_STAGING_PROFILE_ID: ${{ secrets.MAVEN_STAGING_PROFILE_ID }}
         run: npx -p publib@latest publib-maven
-  cdklabs-cdk-amazonmq-activemq-config-v5_15_16_release_pypi:
-    name: "@cdklabs/cdk-amazonmq-activemq-config-v5_15_16: Publish to PyPI"
+  cdklabs-cdk-amazonmq-activemq-config-v5-15-16_release_pypi:
+    name: "@cdklabs/cdk-amazonmq-activemq-config-v5-15-16: Publish to PyPI"
     needs: release
     runs-on: ubuntu-latest
     permissions:
       contents: read
-    if: ${{ needs.release.outputs.latest_commit == github.sha && needs.release.outputs.publish-cdklabs-cdk-amazonmq-activemq-config-v5_15_16 == 'true' }}
+    if: ${{ needs.release.outputs.latest_commit == github.sha && needs.release.outputs.publish-cdklabs-cdk-amazonmq-activemq-config-v5-15-16 == 'true' }}
     steps:
       - uses: actions/setup-node@v4
         with:
@@ -204,7 +204,7 @@ jobs:
       - name: Download build artifacts
         uses: actions/download-artifact@v4
         with:
-          name: cdklabs-cdk-amazonmq-activemq-config-v5_15_16_build-artifact
+          name: cdklabs-cdk-amazonmq-activemq-config-v5-15-16_build-artifact
           path: dist
       - name: Restore build artifact permissions
         run: cd dist && setfacl --restore=permissions-backup.acl
@@ -214,13 +214,13 @@ jobs:
           TWINE_USERNAME: ${{ secrets.TWINE_USERNAME }}
           TWINE_PASSWORD: ${{ secrets.TWINE_PASSWORD }}
         run: npx -p publib@latest publib-pypi
-  cdklabs-cdk-amazonmq-activemq-config-v5_15_16_release_nuget:
-    name: "@cdklabs/cdk-amazonmq-activemq-config-v5_15_16: Publish to NuGet Gallery"
+  cdklabs-cdk-amazonmq-activemq-config-v5-15-16_release_nuget:
+    name: "@cdklabs/cdk-amazonmq-activemq-config-v5-15-16: Publish to NuGet Gallery"
     needs: release
     runs-on: ubuntu-latest
     permissions:
       contents: read
-    if: ${{ needs.release.outputs.latest_commit == github.sha && needs.release.outputs.publish-cdklabs-cdk-amazonmq-activemq-config-v5_15_16 == 'true' }}
+    if: ${{ needs.release.outputs.latest_commit == github.sha && needs.release.outputs.publish-cdklabs-cdk-amazonmq-activemq-config-v5-15-16 == 'true' }}
     steps:
       - uses: actions/setup-node@v4
         with:
@@ -231,7 +231,7 @@ jobs:
       - name: Download build artifacts
         uses: actions/download-artifact@v4
         with:
-          name: cdklabs-cdk-amazonmq-activemq-config-v5_15_16_build-artifact
+          name: cdklabs-cdk-amazonmq-activemq-config-v5-15-16_build-artifact
           path: dist
       - name: Restore build artifact permissions
         run: cd dist && setfacl --restore=permissions-backup.acl
@@ -240,18 +240,18 @@ jobs:
         env:
           NUGET_API_KEY: ${{ secrets.NUGET_API_KEY }}
         run: npx -p publib@latest publib-nuget
-  cdklabs-cdk-amazonmq-activemq-config-v5_16_7_release_github:
-    name: "@cdklabs/cdk-amazonmq-activemq-config-v5_16_7: Publish to GitHub Releases"
+  cdklabs-cdk-amazonmq-activemq-config-v5-16-7_release_github:
+    name: "@cdklabs/cdk-amazonmq-activemq-config-v5-16-7: Publish to GitHub Releases"
     needs:
       - release
-      - cdklabs-cdk-amazonmq-activemq-config-v5_16_7_release_npm
-      - cdklabs-cdk-amazonmq-activemq-config-v5_16_7_release_maven
-      - cdklabs-cdk-amazonmq-activemq-config-v5_16_7_release_pypi
-      - cdklabs-cdk-amazonmq-activemq-config-v5_16_7_release_nuget
+      - cdklabs-cdk-amazonmq-activemq-config-v5-16-7_release_npm
+      - cdklabs-cdk-amazonmq-activemq-config-v5-16-7_release_maven
+      - cdklabs-cdk-amazonmq-activemq-config-v5-16-7_release_pypi
+      - cdklabs-cdk-amazonmq-activemq-config-v5-16-7_release_nuget
     runs-on: ubuntu-latest
     permissions:
       contents: write
-    if: ${{ needs.release.outputs.latest_commit == github.sha && needs.release.outputs.publish-cdklabs-cdk-amazonmq-activemq-config-v5_16_7 == 'true' }}
+    if: ${{ needs.release.outputs.latest_commit == github.sha && needs.release.outputs.publish-cdklabs-cdk-amazonmq-activemq-config-v5-16-7 == 'true' }}
     steps:
       - uses: actions/setup-node@v4
         with:
@@ -259,7 +259,7 @@ jobs:
       - name: Download build artifacts
         uses: actions/download-artifact@v4
         with:
-          name: cdklabs-cdk-amazonmq-activemq-config-v5_16_7_build-artifact
+          name: cdklabs-cdk-amazonmq-activemq-config-v5-16-7_build-artifact
           path: dist
       - name: Restore build artifact permissions
         run: cd dist && setfacl --restore=permissions-backup.acl
@@ -270,14 +270,14 @@ jobs:
           GITHUB_REPOSITORY: ${{ github.repository }}
           GITHUB_REF: ${{ github.sha }}
         run: errout=$(mktemp); gh release create $(cat dist/releasetag.txt) -R $GITHUB_REPOSITORY -F dist/changelog.md -t $(cat dist/releasetag.txt) --target $GITHUB_REF 2> $errout && true; exitcode=$?; if [ $exitcode -ne 0 ] && ! grep -q "Release.tag_name already exists" $errout; then cat $errout; exit $exitcode; fi
-  cdklabs-cdk-amazonmq-activemq-config-v5_16_7_release_npm:
-    name: "@cdklabs/cdk-amazonmq-activemq-config-v5_16_7: Publish to npm"
+  cdklabs-cdk-amazonmq-activemq-config-v5-16-7_release_npm:
+    name: "@cdklabs/cdk-amazonmq-activemq-config-v5-16-7: Publish to npm"
     needs: release
     runs-on: ubuntu-latest
     permissions:
       id-token: write
       contents: read
-    if: ${{ needs.release.outputs.latest_commit == github.sha && needs.release.outputs.publish-cdklabs-cdk-amazonmq-activemq-config-v5_16_7 == 'true' }}
+    if: ${{ needs.release.outputs.latest_commit == github.sha && needs.release.outputs.publish-cdklabs-cdk-amazonmq-activemq-config-v5-16-7 == 'true' }}
     steps:
       - uses: actions/setup-node@v4
         with:
@@ -285,7 +285,7 @@ jobs:
       - name: Download build artifacts
         uses: actions/download-artifact@v4
         with:
-          name: cdklabs-cdk-amazonmq-activemq-config-v5_16_7_build-artifact
+          name: cdklabs-cdk-amazonmq-activemq-config-v5-16-7_build-artifact
           path: dist
       - name: Restore build artifact permissions
         run: cd dist && setfacl --restore=permissions-backup.acl
@@ -297,13 +297,13 @@ jobs:
           NPM_CONFIG_PROVENANCE: "true"
           NPM_TOKEN: ${{ secrets.NPM_TOKEN }}
         run: npx -p publib@latest publib-npm
-  cdklabs-cdk-amazonmq-activemq-config-v5_16_7_release_maven:
-    name: "@cdklabs/cdk-amazonmq-activemq-config-v5_16_7: Publish to Maven Central"
+  cdklabs-cdk-amazonmq-activemq-config-v5-16-7_release_maven:
+    name: "@cdklabs/cdk-amazonmq-activemq-config-v5-16-7: Publish to Maven Central"
     needs: release
     runs-on: ubuntu-latest
     permissions:
       contents: read
-    if: ${{ needs.release.outputs.latest_commit == github.sha && needs.release.outputs.publish-cdklabs-cdk-amazonmq-activemq-config-v5_16_7 == 'true' }}
+    if: ${{ needs.release.outputs.latest_commit == github.sha && needs.release.outputs.publish-cdklabs-cdk-amazonmq-activemq-config-v5-16-7 == 'true' }}
     steps:
       - uses: actions/setup-java@v4
         with:
@@ -315,7 +315,7 @@ jobs:
       - name: Download build artifacts
         uses: actions/download-artifact@v4
         with:
-          name: cdklabs-cdk-amazonmq-activemq-config-v5_16_7_build-artifact
+          name: cdklabs-cdk-amazonmq-activemq-config-v5-16-7_build-artifact
           path: dist
       - name: Restore build artifact permissions
         run: cd dist && setfacl --restore=permissions-backup.acl
@@ -328,13 +328,13 @@ jobs:
           MAVEN_USERNAME: ${{ secrets.MAVEN_USERNAME }}
           MAVEN_STAGING_PROFILE_ID: ${{ secrets.MAVEN_STAGING_PROFILE_ID }}
         run: npx -p publib@latest publib-maven
-  cdklabs-cdk-amazonmq-activemq-config-v5_16_7_release_pypi:
-    name: "@cdklabs/cdk-amazonmq-activemq-config-v5_16_7: Publish to PyPI"
+  cdklabs-cdk-amazonmq-activemq-config-v5-16-7_release_pypi:
+    name: "@cdklabs/cdk-amazonmq-activemq-config-v5-16-7: Publish to PyPI"
     needs: release
     runs-on: ubuntu-latest
     permissions:
       contents: read
-    if: ${{ needs.release.outputs.latest_commit == github.sha && needs.release.outputs.publish-cdklabs-cdk-amazonmq-activemq-config-v5_16_7 == 'true' }}
+    if: ${{ needs.release.outputs.latest_commit == github.sha && needs.release.outputs.publish-cdklabs-cdk-amazonmq-activemq-config-v5-16-7 == 'true' }}
     steps:
       - uses: actions/setup-node@v4
         with:
@@ -345,7 +345,7 @@ jobs:
       - name: Download build artifacts
         uses: actions/download-artifact@v4
         with:
-          name: cdklabs-cdk-amazonmq-activemq-config-v5_16_7_build-artifact
+          name: cdklabs-cdk-amazonmq-activemq-config-v5-16-7_build-artifact
           path: dist
       - name: Restore build artifact permissions
         run: cd dist && setfacl --restore=permissions-backup.acl
@@ -355,13 +355,13 @@ jobs:
           TWINE_USERNAME: ${{ secrets.TWINE_USERNAME }}
           TWINE_PASSWORD: ${{ secrets.TWINE_PASSWORD }}
         run: npx -p publib@latest publib-pypi
-  cdklabs-cdk-amazonmq-activemq-config-v5_16_7_release_nuget:
-    name: "@cdklabs/cdk-amazonmq-activemq-config-v5_16_7: Publish to NuGet Gallery"
+  cdklabs-cdk-amazonmq-activemq-config-v5-16-7_release_nuget:
+    name: "@cdklabs/cdk-amazonmq-activemq-config-v5-16-7: Publish to NuGet Gallery"
     needs: release
     runs-on: ubuntu-latest
     permissions:
       contents: read
-    if: ${{ needs.release.outputs.latest_commit == github.sha && needs.release.outputs.publish-cdklabs-cdk-amazonmq-activemq-config-v5_16_7 == 'true' }}
+    if: ${{ needs.release.outputs.latest_commit == github.sha && needs.release.outputs.publish-cdklabs-cdk-amazonmq-activemq-config-v5-16-7 == 'true' }}
     steps:
       - uses: actions/setup-node@v4
         with:
@@ -372,7 +372,7 @@ jobs:
       - name: Download build artifacts
         uses: actions/download-artifact@v4
         with:
-          name: cdklabs-cdk-amazonmq-activemq-config-v5_16_7_build-artifact
+          name: cdklabs-cdk-amazonmq-activemq-config-v5-16-7_build-artifact
           path: dist
       - name: Restore build artifact permissions
         run: cd dist && setfacl --restore=permissions-backup.acl
@@ -381,18 +381,18 @@ jobs:
         env:
           NUGET_API_KEY: ${{ secrets.NUGET_API_KEY }}
         run: npx -p publib@latest publib-nuget
-  cdklabs-cdk-amazonmq-activemq-config-v5_17_6_release_github:
-    name: "@cdklabs/cdk-amazonmq-activemq-config-v5_17_6: Publish to GitHub Releases"
+  cdklabs-cdk-amazonmq-activemq-config-v5-17-6_release_github:
+    name: "@cdklabs/cdk-amazonmq-activemq-config-v5-17-6: Publish to GitHub Releases"
     needs:
       - release
-      - cdklabs-cdk-amazonmq-activemq-config-v5_17_6_release_npm
-      - cdklabs-cdk-amazonmq-activemq-config-v5_17_6_release_maven
-      - cdklabs-cdk-amazonmq-activemq-config-v5_17_6_release_pypi
-      - cdklabs-cdk-amazonmq-activemq-config-v5_17_6_release_nuget
+      - cdklabs-cdk-amazonmq-activemq-config-v5-17-6_release_npm
+      - cdklabs-cdk-amazonmq-activemq-config-v5-17-6_release_maven
+      - cdklabs-cdk-amazonmq-activemq-config-v5-17-6_release_pypi
+      - cdklabs-cdk-amazonmq-activemq-config-v5-17-6_release_nuget
     runs-on: ubuntu-latest
     permissions:
       contents: write
-    if: ${{ needs.release.outputs.latest_commit == github.sha && needs.release.outputs.publish-cdklabs-cdk-amazonmq-activemq-config-v5_17_6 == 'true' }}
+    if: ${{ needs.release.outputs.latest_commit == github.sha && needs.release.outputs.publish-cdklabs-cdk-amazonmq-activemq-config-v5-17-6 == 'true' }}
     steps:
       - uses: actions/setup-node@v4
         with:
@@ -400,7 +400,7 @@ jobs:
       - name: Download build artifacts
         uses: actions/download-artifact@v4
         with:
-          name: cdklabs-cdk-amazonmq-activemq-config-v5_17_6_build-artifact
+          name: cdklabs-cdk-amazonmq-activemq-config-v5-17-6_build-artifact
           path: dist
       - name: Restore build artifact permissions
         run: cd dist && setfacl --restore=permissions-backup.acl
@@ -411,14 +411,14 @@ jobs:
           GITHUB_REPOSITORY: ${{ github.repository }}
           GITHUB_REF: ${{ github.sha }}
         run: errout=$(mktemp); gh release create $(cat dist/releasetag.txt) -R $GITHUB_REPOSITORY -F dist/changelog.md -t $(cat dist/releasetag.txt) --target $GITHUB_REF 2> $errout && true; exitcode=$?; if [ $exitcode -ne 0 ] && ! grep -q "Release.tag_name already exists" $errout; then cat $errout; exit $exitcode; fi
-  cdklabs-cdk-amazonmq-activemq-config-v5_17_6_release_npm:
-    name: "@cdklabs/cdk-amazonmq-activemq-config-v5_17_6: Publish to npm"
+  cdklabs-cdk-amazonmq-activemq-config-v5-17-6_release_npm:
+    name: "@cdklabs/cdk-amazonmq-activemq-config-v5-17-6: Publish to npm"
     needs: release
     runs-on: ubuntu-latest
     permissions:
       id-token: write
       contents: read
-    if: ${{ needs.release.outputs.latest_commit == github.sha && needs.release.outputs.publish-cdklabs-cdk-amazonmq-activemq-config-v5_17_6 == 'true' }}
+    if: ${{ needs.release.outputs.latest_commit == github.sha && needs.release.outputs.publish-cdklabs-cdk-amazonmq-activemq-config-v5-17-6 == 'true' }}
     steps:
       - uses: actions/setup-node@v4
         with:
@@ -426,7 +426,7 @@ jobs:
       - name: Download build artifacts
         uses: actions/download-artifact@v4
         with:
-          name: cdklabs-cdk-amazonmq-activemq-config-v5_17_6_build-artifact
+          name: cdklabs-cdk-amazonmq-activemq-config-v5-17-6_build-artifact
           path: dist
       - name: Restore build artifact permissions
         run: cd dist && setfacl --restore=permissions-backup.acl
@@ -438,13 +438,13 @@ jobs:
           NPM_CONFIG_PROVENANCE: "true"
           NPM_TOKEN: ${{ secrets.NPM_TOKEN }}
         run: npx -p publib@latest publib-npm
-  cdklabs-cdk-amazonmq-activemq-config-v5_17_6_release_maven:
-    name: "@cdklabs/cdk-amazonmq-activemq-config-v5_17_6: Publish to Maven Central"
+  cdklabs-cdk-amazonmq-activemq-config-v5-17-6_release_maven:
+    name: "@cdklabs/cdk-amazonmq-activemq-config-v5-17-6: Publish to Maven Central"
     needs: release
     runs-on: ubuntu-latest
     permissions:
       contents: read
-    if: ${{ needs.release.outputs.latest_commit == github.sha && needs.release.outputs.publish-cdklabs-cdk-amazonmq-activemq-config-v5_17_6 == 'true' }}
+    if: ${{ needs.release.outputs.latest_commit == github.sha && needs.release.outputs.publish-cdklabs-cdk-amazonmq-activemq-config-v5-17-6 == 'true' }}
     steps:
       - uses: actions/setup-java@v4
         with:
@@ -456,7 +456,7 @@ jobs:
       - name: Download build artifacts
         uses: actions/download-artifact@v4
         with:
-          name: cdklabs-cdk-amazonmq-activemq-config-v5_17_6_build-artifact
+          name: cdklabs-cdk-amazonmq-activemq-config-v5-17-6_build-artifact
           path: dist
       - name: Restore build artifact permissions
         run: cd dist && setfacl --restore=permissions-backup.acl
@@ -469,13 +469,13 @@ jobs:
           MAVEN_USERNAME: ${{ secrets.MAVEN_USERNAME }}
           MAVEN_STAGING_PROFILE_ID: ${{ secrets.MAVEN_STAGING_PROFILE_ID }}
         run: npx -p publib@latest publib-maven
-  cdklabs-cdk-amazonmq-activemq-config-v5_17_6_release_pypi:
-    name: "@cdklabs/cdk-amazonmq-activemq-config-v5_17_6: Publish to PyPI"
+  cdklabs-cdk-amazonmq-activemq-config-v5-17-6_release_pypi:
+    name: "@cdklabs/cdk-amazonmq-activemq-config-v5-17-6: Publish to PyPI"
     needs: release
     runs-on: ubuntu-latest
     permissions:
       contents: read
-    if: ${{ needs.release.outputs.latest_commit == github.sha && needs.release.outputs.publish-cdklabs-cdk-amazonmq-activemq-config-v5_17_6 == 'true' }}
+    if: ${{ needs.release.outputs.latest_commit == github.sha && needs.release.outputs.publish-cdklabs-cdk-amazonmq-activemq-config-v5-17-6 == 'true' }}
     steps:
       - uses: actions/setup-node@v4
         with:
@@ -486,7 +486,7 @@ jobs:
       - name: Download build artifacts
         uses: actions/download-artifact@v4
         with:
-          name: cdklabs-cdk-amazonmq-activemq-config-v5_17_6_build-artifact
+          name: cdklabs-cdk-amazonmq-activemq-config-v5-17-6_build-artifact
           path: dist
       - name: Restore build artifact permissions
         run: cd dist && setfacl --restore=permissions-backup.acl
@@ -496,13 +496,13 @@ jobs:
           TWINE_USERNAME: ${{ secrets.TWINE_USERNAME }}
           TWINE_PASSWORD: ${{ secrets.TWINE_PASSWORD }}
         run: npx -p publib@latest publib-pypi
-  cdklabs-cdk-amazonmq-activemq-config-v5_17_6_release_nuget:
-    name: "@cdklabs/cdk-amazonmq-activemq-config-v5_17_6: Publish to NuGet Gallery"
+  cdklabs-cdk-amazonmq-activemq-config-v5-17-6_release_nuget:
+    name: "@cdklabs/cdk-amazonmq-activemq-config-v5-17-6: Publish to NuGet Gallery"
     needs: release
     runs-on: ubuntu-latest
     permissions:
       contents: read
-    if: ${{ needs.release.outputs.latest_commit == github.sha && needs.release.outputs.publish-cdklabs-cdk-amazonmq-activemq-config-v5_17_6 == 'true' }}
+    if: ${{ needs.release.outputs.latest_commit == github.sha && needs.release.outputs.publish-cdklabs-cdk-amazonmq-activemq-config-v5-17-6 == 'true' }}
     steps:
       - uses: actions/setup-node@v4
         with:
@@ -513,7 +513,7 @@ jobs:
       - name: Download build artifacts
         uses: actions/download-artifact@v4
         with:
-          name: cdklabs-cdk-amazonmq-activemq-config-v5_17_6_build-artifact
+          name: cdklabs-cdk-amazonmq-activemq-config-v5-17-6_build-artifact
           path: dist
       - name: Restore build artifact permissions
         run: cd dist && setfacl --restore=permissions-backup.acl
@@ -522,18 +522,18 @@ jobs:
         env:
           NUGET_API_KEY: ${{ secrets.NUGET_API_KEY }}
         run: npx -p publib@latest publib-nuget
-  cdklabs-cdk-amazonmq-activemq-config-v5_18_4_release_github:
-    name: "@cdklabs/cdk-amazonmq-activemq-config-v5_18_4: Publish to GitHub Releases"
+  cdklabs-cdk-amazonmq-activemq-config-v5-18-4_release_github:
+    name: "@cdklabs/cdk-amazonmq-activemq-config-v5-18-4: Publish to GitHub Releases"
     needs:
       - release
-      - cdklabs-cdk-amazonmq-activemq-config-v5_18_4_release_npm
-      - cdklabs-cdk-amazonmq-activemq-config-v5_18_4_release_maven
-      - cdklabs-cdk-amazonmq-activemq-config-v5_18_4_release_pypi
-      - cdklabs-cdk-amazonmq-activemq-config-v5_18_4_release_nuget
+      - cdklabs-cdk-amazonmq-activemq-config-v5-18-4_release_npm
+      - cdklabs-cdk-amazonmq-activemq-config-v5-18-4_release_maven
+      - cdklabs-cdk-amazonmq-activemq-config-v5-18-4_release_pypi
+      - cdklabs-cdk-amazonmq-activemq-config-v5-18-4_release_nuget
     runs-on: ubuntu-latest
     permissions:
       contents: write
-    if: ${{ needs.release.outputs.latest_commit == github.sha && needs.release.outputs.publish-cdklabs-cdk-amazonmq-activemq-config-v5_18_4 == 'true' }}
+    if: ${{ needs.release.outputs.latest_commit == github.sha && needs.release.outputs.publish-cdklabs-cdk-amazonmq-activemq-config-v5-18-4 == 'true' }}
     steps:
       - uses: actions/setup-node@v4
         with:
@@ -541,7 +541,7 @@ jobs:
       - name: Download build artifacts
         uses: actions/download-artifact@v4
         with:
-          name: cdklabs-cdk-amazonmq-activemq-config-v5_18_4_build-artifact
+          name: cdklabs-cdk-amazonmq-activemq-config-v5-18-4_build-artifact
           path: dist
       - name: Restore build artifact permissions
         run: cd dist && setfacl --restore=permissions-backup.acl
@@ -552,14 +552,14 @@ jobs:
           GITHUB_REPOSITORY: ${{ github.repository }}
           GITHUB_REF: ${{ github.sha }}
         run: errout=$(mktemp); gh release create $(cat dist/releasetag.txt) -R $GITHUB_REPOSITORY -F dist/changelog.md -t $(cat dist/releasetag.txt) --target $GITHUB_REF 2> $errout && true; exitcode=$?; if [ $exitcode -ne 0 ] && ! grep -q "Release.tag_name already exists" $errout; then cat $errout; exit $exitcode; fi
-  cdklabs-cdk-amazonmq-activemq-config-v5_18_4_release_npm:
-    name: "@cdklabs/cdk-amazonmq-activemq-config-v5_18_4: Publish to npm"
+  cdklabs-cdk-amazonmq-activemq-config-v5-18-4_release_npm:
+    name: "@cdklabs/cdk-amazonmq-activemq-config-v5-18-4: Publish to npm"
     needs: release
     runs-on: ubuntu-latest
     permissions:
       id-token: write
       contents: read
-    if: ${{ needs.release.outputs.latest_commit == github.sha && needs.release.outputs.publish-cdklabs-cdk-amazonmq-activemq-config-v5_18_4 == 'true' }}
+    if: ${{ needs.release.outputs.latest_commit == github.sha && needs.release.outputs.publish-cdklabs-cdk-amazonmq-activemq-config-v5-18-4 == 'true' }}
     steps:
       - uses: actions/setup-node@v4
         with:
@@ -567,7 +567,7 @@ jobs:
       - name: Download build artifacts
         uses: actions/download-artifact@v4
         with:
-          name: cdklabs-cdk-amazonmq-activemq-config-v5_18_4_build-artifact
+          name: cdklabs-cdk-amazonmq-activemq-config-v5-18-4_build-artifact
           path: dist
       - name: Restore build artifact permissions
         run: cd dist && setfacl --restore=permissions-backup.acl
@@ -579,13 +579,13 @@ jobs:
           NPM_CONFIG_PROVENANCE: "true"
           NPM_TOKEN: ${{ secrets.NPM_TOKEN }}
         run: npx -p publib@latest publib-npm
-  cdklabs-cdk-amazonmq-activemq-config-v5_18_4_release_maven:
-    name: "@cdklabs/cdk-amazonmq-activemq-config-v5_18_4: Publish to Maven Central"
+  cdklabs-cdk-amazonmq-activemq-config-v5-18-4_release_maven:
+    name: "@cdklabs/cdk-amazonmq-activemq-config-v5-18-4: Publish to Maven Central"
     needs: release
     runs-on: ubuntu-latest
     permissions:
       contents: read
-    if: ${{ needs.release.outputs.latest_commit == github.sha && needs.release.outputs.publish-cdklabs-cdk-amazonmq-activemq-config-v5_18_4 == 'true' }}
+    if: ${{ needs.release.outputs.latest_commit == github.sha && needs.release.outputs.publish-cdklabs-cdk-amazonmq-activemq-config-v5-18-4 == 'true' }}
     steps:
       - uses: actions/setup-java@v4
         with:
@@ -597,7 +597,7 @@ jobs:
       - name: Download build artifacts
         uses: actions/download-artifact@v4
         with:
-          name: cdklabs-cdk-amazonmq-activemq-config-v5_18_4_build-artifact
+          name: cdklabs-cdk-amazonmq-activemq-config-v5-18-4_build-artifact
           path: dist
       - name: Restore build artifact permissions
         run: cd dist && setfacl --restore=permissions-backup.acl
@@ -610,13 +610,13 @@ jobs:
           MAVEN_USERNAME: ${{ secrets.MAVEN_USERNAME }}
           MAVEN_STAGING_PROFILE_ID: ${{ secrets.MAVEN_STAGING_PROFILE_ID }}
         run: npx -p publib@latest publib-maven
-  cdklabs-cdk-amazonmq-activemq-config-v5_18_4_release_pypi:
-    name: "@cdklabs/cdk-amazonmq-activemq-config-v5_18_4: Publish to PyPI"
+  cdklabs-cdk-amazonmq-activemq-config-v5-18-4_release_pypi:
+    name: "@cdklabs/cdk-amazonmq-activemq-config-v5-18-4: Publish to PyPI"
     needs: release
     runs-on: ubuntu-latest
     permissions:
       contents: read
-    if: ${{ needs.release.outputs.latest_commit == github.sha && needs.release.outputs.publish-cdklabs-cdk-amazonmq-activemq-config-v5_18_4 == 'true' }}
+    if: ${{ needs.release.outputs.latest_commit == github.sha && needs.release.outputs.publish-cdklabs-cdk-amazonmq-activemq-config-v5-18-4 == 'true' }}
     steps:
       - uses: actions/setup-node@v4
         with:
@@ -627,7 +627,7 @@ jobs:
       - name: Download build artifacts
         uses: actions/download-artifact@v4
         with:
-          name: cdklabs-cdk-amazonmq-activemq-config-v5_18_4_build-artifact
+          name: cdklabs-cdk-amazonmq-activemq-config-v5-18-4_build-artifact
           path: dist
       - name: Restore build artifact permissions
         run: cd dist && setfacl --restore=permissions-backup.acl
@@ -637,13 +637,13 @@ jobs:
           TWINE_USERNAME: ${{ secrets.TWINE_USERNAME }}
           TWINE_PASSWORD: ${{ secrets.TWINE_PASSWORD }}
         run: npx -p publib@latest publib-pypi
-  cdklabs-cdk-amazonmq-activemq-config-v5_18_4_release_nuget:
-    name: "@cdklabs/cdk-amazonmq-activemq-config-v5_18_4: Publish to NuGet Gallery"
+  cdklabs-cdk-amazonmq-activemq-config-v5-18-4_release_nuget:
+    name: "@cdklabs/cdk-amazonmq-activemq-config-v5-18-4: Publish to NuGet Gallery"
     needs: release
     runs-on: ubuntu-latest
     permissions:
       contents: read
-    if: ${{ needs.release.outputs.latest_commit == github.sha && needs.release.outputs.publish-cdklabs-cdk-amazonmq-activemq-config-v5_18_4 == 'true' }}
+    if: ${{ needs.release.outputs.latest_commit == github.sha && needs.release.outputs.publish-cdklabs-cdk-amazonmq-activemq-config-v5-18-4 == 'true' }}
     steps:
       - uses: actions/setup-node@v4
         with:
@@ -654,7 +654,7 @@ jobs:
       - name: Download build artifacts
         uses: actions/download-artifact@v4
         with:
-          name: cdklabs-cdk-amazonmq-activemq-config-v5_18_4_build-artifact
+          name: cdklabs-cdk-amazonmq-activemq-config-v5-18-4_build-artifact
           path: dist
       - name: Restore build artifact permissions
         run: cd dist && setfacl --restore=permissions-backup.acl

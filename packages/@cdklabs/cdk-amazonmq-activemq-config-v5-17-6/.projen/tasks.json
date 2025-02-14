@@ -29,7 +29,7 @@
         "CHANGELOG": "dist/changelog.md",
         "BUMPFILE": "dist/version.txt",
         "RELEASETAG": "dist/releasetag.txt",
-        "RELEASE_TAG_PREFIX": "@cdklabs/cdk-amazonmq-activemq-config-v5_16_7@",
+        "RELEASE_TAG_PREFIX": "@cdklabs/cdk-amazonmq-activemq-config-v5-17-6@",
         "VERSIONRCOPTIONS": "{\"path\":\".\"}",
         "BUMP_PACKAGE": "commit-and-tag-version@^12",
         "RELEASABLE_COMMITS": "git log --no-merges --oneline $LATEST_TAG..HEAD -E --grep \"^(feat|fix){1}(\\([^()[:space:]]+\\))?(!)?:[[:blank:]]+.+\" -- ."
@@ -99,7 +99,7 @@
       "name": "gather-versions",
       "steps": [
         {
-          "exec": "node -e \"require(path.join(path.dirname(require.resolve('cdklabs-projen-project-types')), 'yarn', 'gather-versions.exec.js'))\" @cdklabs/cdk-amazonmq-activemq-config-v5_16_7 MAJOR --deps ",
+          "exec": "node -e \"require(path.join(path.dirname(require.resolve('cdklabs-projen-project-types')), 'yarn', 'gather-versions.exec.js'))\" @cdklabs/cdk-amazonmq-activemq-config-v5-17-6 MAJOR --deps ",
           "receiveArgs": true
         }
       ]
@@ -200,7 +200,7 @@
           "exec": "echo \"/*\\nCopyright Amazon.com, Inc. or its affiliates. All Rights Reserved.\\nSPDX-License-Identifier: Apache-2.0\\n*/\" > src/generated.ts"
         },
         {
-          "exec": "ts-node ../xsd2jsii/bin/xsd2jsii.ts ../../../sources/amazon-mq-active-mq-5.16.7.xsd broker >> src/generated.ts"
+          "exec": "ts-node ../xsd2jsii/bin/xsd2jsii.ts ../../../sources/amazon-mq-active-mq-5.17.6.xsd broker >> src/generated.ts"
         },
         {
           "exec": "echo \"/*\\nCopyright Amazon.com, Inc. or its affiliates. All Rights Reserved.\\nSPDX-License-Identifier: Apache-2.0\\n*/\" > src/index.ts"
@@ -243,7 +243,7 @@
         "CHANGELOG": "dist/changelog.md",
         "BUMPFILE": "dist/version.txt",
         "RELEASETAG": "dist/releasetag.txt",
-        "RELEASE_TAG_PREFIX": "@cdklabs/cdk-amazonmq-activemq-config-v5_16_7@",
+        "RELEASE_TAG_PREFIX": "@cdklabs/cdk-amazonmq-activemq-config-v5-17-6@",
         "VERSIONRCOPTIONS": "{\"path\":\".\"}",
         "BUMP_PACKAGE": "commit-and-tag-version@^12",
         "RELEASABLE_COMMITS": "git log --no-merges --oneline $LATEST_TAG..HEAD -E --grep \"^(feat|fix){1}(\\([^()[:space:]]+\\))?(!)?:[[:blank:]]+.+\" -- ."

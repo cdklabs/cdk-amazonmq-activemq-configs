@@ -136,7 +136,7 @@ for (const schema of schemas) {
     marker: true,
     readonly: false,
     committed: true,
-    lines: generatedTestTsTemplate.replace('{{XSD}}', `amazon-mq-active-mq-${MAJOR}.${MINOR}.${PATCH}.xsd`).split('\n')
+    lines: generatedTestTsTemplate.replaceAll('{{XSD}}', `amazon-mq-active-mq-${MAJOR}.${MINOR}.${PATCH}.xsd`).split('\n')
   });
 
   schemaProject.preCompileTask.exec(
@@ -173,21 +173,3 @@ for (const schema of schemas) {
 }
 
 project.synth();
-
-// function changeDelimiter(str: string, delim: string) {
-//   return str.split('-').join(delim);
-// }
-
-// const project = new CdklabsConstructLibrary({
-//   author: "AWS",
-//   authorAddress: "aws-cdk-dev@amazon.com",
-//   cdkVersion,
-//   defaultReleaseBranch: "main",
-//   devDeps: ["cdklabs-projen-project-types"],
-//   name: "@cdklabs/cdk-amazonmq-activemq-configs",
-//   projenrcTs: true,
-//   release: false,
-//   prettier: true,
-// });
-
-// project.synth();

@@ -117,6 +117,7 @@ for (const schema of schemas) {
       javaPackage: `io.github.cdklabs.cdkamazonmqactivemqconfig.v${MAJOR}_${MINOR}_${PATCH}`,
       mavenGroupId: "io.github.cdklabs",
       mavenArtifactId: `cdk-amazonmq-activemq-config-v${MAJOR}-${MINOR}-${PATCH}`,
+      mavenEndpoint: 'https://s01.oss.sonatype.org'
     },
     // publishToGo: {
     //   moduleName: `github.com/cdklabs/cdk-amazonmq-activemq-config-v${MAJOR}_${MINOR}_${PATCH}`,

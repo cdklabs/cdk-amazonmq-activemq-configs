@@ -8,7 +8,8 @@
     "inlineSourceMap": true,
     "inlineSources": true,
     "lib": [
-      "es2019"
+      "ES2021",
+      "ES2021.String"
     ],
     "module": "CommonJS",
     "noEmitOnError": false,
@@ -26,12 +27,27 @@
     "target": "ES2019"
   },
   "include": [
-    "src/**/*.ts",
-    "test/**/*.ts",
     ".projenrc.ts",
     "projenrc/**/*.ts"
   ],
   "exclude": [
     "node_modules"
+  ],
+  "references": [
+    {
+      "path": "packages/@cdklabs/xsd2jsii"
+    },
+    {
+      "path": "packages/@cdklabs/cdk-amazonmq-activemq-config-v5-15-16"
+    },
+    {
+      "path": "packages/@cdklabs/cdk-amazonmq-activemq-config-v5-16-7"
+    },
+    {
+      "path": "packages/@cdklabs/cdk-amazonmq-activemq-config-v5-17-6"
+    },
+    {
+      "path": "packages/@cdklabs/cdk-amazonmq-activemq-config-v5-18-4"
+    }
   ]
 }

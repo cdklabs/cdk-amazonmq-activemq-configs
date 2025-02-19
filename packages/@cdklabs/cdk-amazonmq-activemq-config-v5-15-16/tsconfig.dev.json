@@ -34,5 +34,9 @@
   "exclude": [
     "node_modules"
   ],
-  "references": []
+  "references": [
+    {
+      "path": "../xsd2jsii"
+    }
+  ]
 }

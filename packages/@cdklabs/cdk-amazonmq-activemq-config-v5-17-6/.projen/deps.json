@@ -1,6 +1,10 @@
 {
   "dependencies": [
     {
+      "name": "@cdklabs/xsd2jsii",
+      "type": "build"
+    },
+    {
       "name": "@types/jest",
       "type": "build"
     },
@@ -94,10 +98,6 @@
     },
     {
       "name": "xsd-schema-validator",
-      "type": "build"
-    },
-    {
-      "name": "xsd2jsii",
       "type": "build"
     }
   ],

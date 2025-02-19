@@ -21,6 +21,13 @@
     "@csstools/css-tokenizer" "^3.0.3"
     lru-cache "^10.4.3"
 
+"@aws-cdk/service-spec-types@^0.0.117":
+  version "0.0.117"
+  resolved "https://registry.yarnpkg.com/@aws-cdk/service-spec-types/-/service-spec-types-0.0.117.tgz#b428b6556a3fd20b95e52e311e939b3b18a1f791"
+  integrity sha512-2hMV1i2GtBPCEkZw7gsdiAeTbfMpOXGTD2jh4okiFIvQBDXoKXqL29e7Z4J9pA4KLhNA24SecmFxiiHXhPJ3tA==
+  dependencies:
+    "@cdklabs/tskb" "^0.0.3"
+
 "@babel/code-frame@^7.0.0", "@babel/code-frame@^7.12.13", "@babel/code-frame@^7.26.2":
   version "7.26.2"
   resolved "https://registry.yarnpkg.com/@babel/code-frame/-/code-frame-7.26.2.tgz#4b5fab97d33338eff916235055f0ebc21e573a85"
@@ -284,40 +291,17 @@
   resolved "https://registry.yarnpkg.com/@bcoe/v8-coverage/-/v8-coverage-0.2.3.tgz#75a2e8b51cb758a7553d6804a5932d7aace75c39"
   integrity sha512-0hYQ8SB4Db5zvZB4axdMHGwEaQjkZzFjQiN9LVYvIFB2nSUHW9tYpxWriPrWDASIxiaXax83REcLxuSdnGPZtw==
 
+"@cdklabs/tskb@^0.0.3":
+  version "0.0.3"
+  resolved "https://registry.yarnpkg.com/@cdklabs/tskb/-/tskb-0.0.3.tgz#4b79846d9381eb1252ba85d5d20b7cd7d99b6ecb"
+  integrity sha512-JR+MuD4awAXvutu7HArephXfZm09GPTaSAQUqNcJB5+ZENRm4kV+L6vJL6Tn1xHjCcHksO+HAqj3gYtm5K94vA==
+
 "@cspotcode/source-map-support@^0.8.0":
   version "0.8.1"
   resolved "https://registry.yarnpkg.com/@cspotcode/source-map-support/-/source-map-support-0.8.1.tgz#00629c35a688e05a88b1cda684fb9d5e73f000a1"
   integrity sha512-IchNf6dN4tHoMFIn/7OE8LWZ19Y6q/67Bmf6vnGREv8RSbBVb9LPJxEcnwrcwX6ixSvaiGoomAUvu4YSxXrVgw==
   dependencies:
     "@jridgewell/trace-mapping" "0.3.9"
-
-"@csstools/color-helpers@^5.0.1":
-  version "5.0.1"
-  resolved "https://registry.yarnpkg.com/@csstools/color-helpers/-/color-helpers-5.0.1.tgz#829f1c76f5800b79c51c709e2f36821b728e0e10"
-  integrity sha512-MKtmkA0BX87PKaO1NFRTFH+UnkgnmySQOvNxJubsadusqPEC2aJ9MOQiMceZJJ6oitUl/i0L6u0M1IrmAOmgBA==
-
-"@csstools/css-calc@^2.1.1":
-  version "2.1.1"
-  resolved "https://registry.yarnpkg.com/@csstools/css-calc/-/css-calc-2.1.1.tgz#a7dbc66627f5cf458d42aed14bda0d3860562383"
-  integrity sha512-rL7kaUnTkL9K+Cvo2pnCieqNpTKgQzy5f+N+5Iuko9HAoasP+xgprVh7KN/MaJVvVL1l0EzQq2MoqBHKSrDrag==
-
-"@csstools/css-color-parser@^3.0.7":
-  version "3.0.7"
-  resolved "https://registry.yarnpkg.com/@csstools/css-color-parser/-/css-color-parser-3.0.7.tgz#442d61d58e54ad258d52c309a787fceb33906484"
-  integrity sha512-nkMp2mTICw32uE5NN+EsJ4f5N+IGFeCFu4bGpiKgb2Pq/7J/MpyLBeQ5ry4KKtRFZaYs6sTmcMYrSRIyj5DFKA==
-  dependencies:
-    "@csstools/color-helpers" "^5.0.1"
-    "@csstools/css-calc" "^2.1.1"
-
-"@csstools/css-parser-algorithms@^3.0.4":
-  version "3.0.4"
-  resolved "https://registry.yarnpkg.com/@csstools/css-parser-algorithms/-/css-parser-algorithms-3.0.4.tgz#74426e93bd1c4dcab3e441f5cc7ba4fb35d94356"
-  integrity sha512-Up7rBoV77rv29d3uKHUIVubz1BTcgyUK72IvCQAbfbMv584xHcGKCKbWh7i8hPrRJ7qU4Y8IO3IY9m+iTB7P3A==
-
-"@csstools/css-tokenizer@^3.0.3":
-  version "3.0.3"
-  resolved "https://registry.yarnpkg.com/@csstools/css-tokenizer/-/css-tokenizer-3.0.3.tgz#a5502c8539265fecbd873c1e395a890339f119c2"
-  integrity sha512-UJnjoFsmxfKUdNYdWgOB0mWUypuLvAfQPH1+pyvRJs6euowbFkFC6P13w1l8mJyi3vxYMxc9kld5jZEGRQs6bw==
 
 "@eslint-community/eslint-utils@^4.2.0", "@eslint-community/eslint-utils@^4.4.0":
   version "4.4.1"
@@ -339,13 +323,6 @@
     "@eslint/object-schema" "^2.1.6"
     debug "^4.3.1"
     minimatch "^3.1.2"
-
-"@eslint/core@^0.10.0":
-  version "0.10.0"
-  resolved "https://registry.yarnpkg.com/@eslint/core/-/core-0.10.0.tgz#23727063c21b335f752dbb3a16450f6f9cbc9091"
-  integrity sha512-gFHJ+xBOo4G3WRlR1e/3G8A6/KZAH6zcE/hkLRCZTi/B9avAG365QhFA8uOGzTMqgTghpn7/fSnscW++dpMSAw==
-  dependencies:
-    "@types/json-schema" "^7.0.15"
 
 "@eslint/core@^0.11.0":
   version "0.11.0"
@@ -380,11 +357,11 @@
   integrity sha512-RBMg5FRL0I0gs51M/guSAj5/e14VQ4tpZnQNWwuDT66P14I43ItmPfIZRhO9fUVIPOAQXU47atlywZ/czoqFPA==
 
 "@eslint/plugin-kit@^0.2.5":
-  version "0.2.5"
-  resolved "https://registry.yarnpkg.com/@eslint/plugin-kit/-/plugin-kit-0.2.5.tgz#ee07372035539e7847ef834e3f5e7b79f09e3a81"
-  integrity sha512-lB05FkqEdUg2AA0xEbUz0SnkXT1LcCTa438W4IWTUh4hdOnVbQyOJ81OrDXsJk/LSiJHubgGEFoR5EHq1NsH1A==
+  version "0.2.6"
+  resolved "https://registry.yarnpkg.com/@eslint/plugin-kit/-/plugin-kit-0.2.6.tgz#a30084164a4ced1efb6ec31d3d04f581cb8929c0"
+  integrity sha512-+0TjwR1eAUdZtvv/ir1mGX+v0tUoR3VEPB8Up0LLJC+whRW0GgBBtpbOkg/a/U4Dxa6l5a3l9AJ1aWIQVyoWJA==
   dependencies:
-    "@eslint/core" "^0.10.0"
+    "@eslint/core" "^0.11.0"
     levn "^0.4.1"
 
 "@faker-js/faker@^9.5.0":
@@ -2450,9 +2427,9 @@ flat-cache@^4.0.0:
     keyv "^4.5.4"
 
 flatted@^3.2.7, flatted@^3.2.9:
-  version "3.3.2"
-  resolved "https://registry.yarnpkg.com/flatted/-/flatted-3.3.2.tgz#adba1448a9841bec72b42c532ea23dbbedef1a27"
-  integrity sha512-AiwGJM8YcNOaobumgtng+6NHuOqC3A7MixFeDafM3X9cIUM+xUXoS5Vfgf+OihAYe20fxqNM9yPBXJzRtZ/4eA==
+  version "3.3.3"
+  resolved "https://registry.yarnpkg.com/flatted/-/flatted-3.3.3.tgz#67c8fad95454a7c7abebf74bb78ee74a44023358"
+  integrity sha512-GX+ysw4PBCz0PzosHDepZGANEuFCMLrnRTiEy9McGjmkCQYwRq4A/X786G/fjM/+OjsWSU1ZrY5qyARZmO/uwg==
 
 for-each@^0.3.3:
   version "0.3.5"
@@ -3858,11 +3835,6 @@ log4js@^6.9.1:
     flatted "^3.2.7"
     rfdc "^1.3.0"
     streamroller "^3.1.5"
-
-lru-cache@^10.4.3:
-  version "10.4.3"
-  resolved "https://registry.yarnpkg.com/lru-cache/-/lru-cache-10.4.3.tgz#410fc8a17b70e598013df257c2446b7f3383f119"
-  integrity sha512-JNAzZcXrCt42VGLuYz0zfAzDfAvJWW6AfYlDBQyDV5DClI2m5sAmK+OIO7s59XfsRsWHp02jAJrRadPRGTt6SQ==
 
 lru-cache@^5.1.1:
   version "5.1.1"

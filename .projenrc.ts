@@ -45,7 +45,6 @@ const xsd2jsii = new TypeScriptWorkspace({
   private: true,
   stability,
   name: "@cdklabs/xsd2jsii",
-  packageName: "xsd2jsii",
   bin: {
     xsd2jsii: "bin/xsd2jsii",
   },
@@ -90,7 +89,7 @@ for (const schema of schemas) {
     authorEmail: "cdk-amazonmq-maintainers@amazon.com",
     repository:
       "https://github.com/cdklabs/cdk-amazonmq-activemq-configs",
-    devDeps: [xsd2jsii.package.packageName, 'xsd-schema-validator'],
+    devDeps: [xsd2jsii, 'xsd-schema-validator'],
     prettier: true,
     jest: true,
     disableTsconfig: true,
@@ -140,7 +139,7 @@ for (const schema of schemas) {
   });
 
   schemaProject.preCompileTask.exec(
-    `cp ../${xsd2jsii.package.packageName}/src/xml-node.ts ./src/.`
+    `cp ../../${xsd2jsii.package.packageName}/src/xml-node.ts ./src/.`
   );
 
   const licenseBanner = [

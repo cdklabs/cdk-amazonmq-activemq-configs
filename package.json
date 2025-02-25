@@ -18,9 +18,9 @@
   "devDependencies": {
     "@types/node": "^18",
     "@types/semver": "^7.5.8",
-    "cdklabs-projen-project-types": "^0.1.231",
+    "cdklabs-projen-project-types": "^0.1.234",
     "constructs": "^10.0.0",
-    "projen": "^0.91.12",
+    "projen": "^0.91.13",
     "ts-node": "^10.9.2",
     "typescript": "^5.7.3"
   },
@@ -41,12 +41,12 @@
       "packages/@cdklabs/cdk-amazonmq-activemq-config-v5-18-4"
     ],
     "nohoist": [
+      "@cdklabs/xsd2jsii/@faker-js/faker",
+      "@cdklabs/xsd2jsii/@faker-js/faker/**",
       "@cdklabs/xsd2jsii/json5",
       "@cdklabs/xsd2jsii/json5/**",
       "@cdklabs/xsd2jsii/xml2js",
-      "@cdklabs/xsd2jsii/xml2js/**",
-      "@cdklabs/xsd2jsii/@faker-js/faker",
-      "@cdklabs/xsd2jsii/@faker-js/faker/**"
+      "@cdklabs/xsd2jsii/xml2js/**"
     ]
   },
   "jest": {

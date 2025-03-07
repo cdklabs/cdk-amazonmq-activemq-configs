@@ -146,7 +146,7 @@
       "name": "update-sources:config-xsd",
       "steps": [
         {
-          "exec": "curl -s https://docs.aws.amazon.com/amazon-mq/latest/developer-guide/amazon-mq-broker-configuration-parameters.html | grep -Ewo 'amazon-mq-active-mq-\\d+\\.\\d+\\.\\d+\\.xsd\\.zip' | awk '{ print \"https://docs.aws.amazon.com/amazon-mq/latest/developer-guide/samples/\" $0 \" \" $0 }' | xargs -L1 bash -c 'curl $0 --output $1 && unzip -o $1 && rm $1'"
+          "exec": "curl -s https://docs.aws.amazon.com/amazon-mq/latest/developer-guide/amazon-mq-broker-configuration-parameters.html | grep -Ewo 'amazon-mq-active-mq-[0-9]+\\.[0-9]+\\.[0-9]+\\.xsd\\.zip' | awk '{ print \"https://docs.aws.amazon.com/amazon-mq/latest/developer-guide/samples/\" $0 \" \" $0 }' | xargs -L1 bash -c 'curl $0 --output $1 && unzip -o $1 && rm $1'"
         }
       ],
       "cwd": "sources"

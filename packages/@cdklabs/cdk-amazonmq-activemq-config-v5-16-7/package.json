@@ -36,7 +36,7 @@
   "devDependencies": {
     "@cdklabs/xsd2jsii": "^0.0.0",
     "@types/jest": "^29.5.14",
-    "@types/node": "^22.13.13",
+    "@types/node": "^22.13.14",
     "@typescript-eslint/eslint-plugin": "^8",
     "@typescript-eslint/parser": "^8",
     "commit-and-tag-version": "^12",

@@ -55,7 +55,7 @@
     "prettier": "^3.5.3",
     "projen": "^0.91.20",
     "ts-jest": "^29.3.1",
-    "typescript": "^5.8.2",
+    "typescript": "^5.8.3",
     "xsd-schema-validator": "^0.11.0"
   },
   "main": "lib/index.js",

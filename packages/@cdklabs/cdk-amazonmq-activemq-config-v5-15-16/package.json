@@ -52,7 +52,7 @@
     "jsii-diff": "^1.112.0",
     "jsii-pacmak": "^1.112.0",
     "jsii-rosetta": "~5.7.0",
-    "prettier": "^3.6.1",
+    "prettier": "^3.6.2",
     "ts-jest": "^29.4.0",
     "typescript": "^5.8.3",
     "xsd-schema-validator": "^0.11.0"

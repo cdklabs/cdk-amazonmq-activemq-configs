@@ -22,7 +22,7 @@
     "constructs": "^10.0.0",
     "projen": "^0.95.0",
     "ts-node": "^10.9.2",
-    "typescript": "^5.8.3"
+    "typescript": "^5.9.2"
   },
   "dependencies": {
     "semver": "^7.7.2"

@@ -21,7 +21,7 @@ jobs:
       CI: "true"
     steps:
       - name: Checkout
-        uses: actions/checkout@v4
+        uses: actions/checkout@v5
         with:
           fetch-depth: 0
       - name: Set git identity
@@ -58,7 +58,7 @@ jobs:
         working-directory: packages/@cdklabs/cdk-amazonmq-activemq-config-v5-15-16
       - name: "@cdklabs/cdk-amazonmq-activemq-config-v5-15-16: Upload artifact"
         if: ${{ steps.git_remote.outputs.latest_commit == github.sha }}
-        uses: actions/upload-artifact@v4.4.0
+        uses: actions/upload-artifact@v4.6.2
         with:
           name: cdklabs-cdk-amazonmq-activemq-config-v5-15-16_build-artifact
           path: packages/@cdklabs/cdk-amazonmq-activemq-config-v5-15-16/dist
@@ -70,7 +70,7 @@ jobs:
         working-directory: packages/@cdklabs/cdk-amazonmq-activemq-config-v5-16-7
       - name: "@cdklabs/cdk-amazonmq-activemq-config-v5-16-7: Upload artifact"
         if: ${{ steps.git_remote.outputs.latest_commit == github.sha }}
-        uses: actions/upload-artifact@v4.4.0
+        uses: actions/upload-artifact@v4.6.2
         with:
           name: cdklabs-cdk-amazonmq-activemq-config-v5-16-7_build-artifact
           path: packages/@cdklabs/cdk-amazonmq-activemq-config-v5-16-7/dist
@@ -82,7 +82,7 @@ jobs:
         working-directory: packages/@cdklabs/cdk-amazonmq-activemq-config-v5-17-6
       - name: "@cdklabs/cdk-amazonmq-activemq-config-v5-17-6: Upload artifact"
         if: ${{ steps.git_remote.outputs.latest_commit == github.sha }}
-        uses: actions/upload-artifact@v4.4.0
+        uses: actions/upload-artifact@v4.6.2
         with:
           name: cdklabs-cdk-amazonmq-activemq-config-v5-17-6_build-artifact
           path: packages/@cdklabs/cdk-amazonmq-activemq-config-v5-17-6/dist
@@ -94,7 +94,7 @@ jobs:
         working-directory: packages/@cdklabs/cdk-amazonmq-activemq-config-v5-18-4
       - name: "@cdklabs/cdk-amazonmq-activemq-config-v5-18-4: Upload artifact"
         if: ${{ steps.git_remote.outputs.latest_commit == github.sha }}
-        uses: actions/upload-artifact@v4.4.0
+        uses: actions/upload-artifact@v4.6.2
         with:
           name: cdklabs-cdk-amazonmq-activemq-config-v5-18-4_build-artifact
           path: packages/@cdklabs/cdk-amazonmq-activemq-config-v5-18-4/dist
@@ -112,11 +112,11 @@ jobs:
       contents: write
     if: ${{ needs.release.outputs.latest_commit == github.sha && needs.release.outputs.publish-cdklabs-cdk-amazonmq-activemq-config-v5-15-16 == 'true' }}
     steps:
-      - uses: actions/setup-node@v4
+      - uses: actions/setup-node@v5
         with:
           node-version: lts/*
       - name: Download build artifacts
-        uses: actions/download-artifact@v4
+        uses: actions/download-artifact@v5
         with:
           name: cdklabs-cdk-amazonmq-activemq-config-v5-15-16_build-artifact
           path: dist
@@ -136,11 +136,11 @@ jobs:
       contents: read
     if: ${{ needs.release.outputs.latest_commit == github.sha && needs.release.outputs.publish-cdklabs-cdk-amazonmq-activemq-config-v5-15-16 == 'true' }}
     steps:
-      - uses: actions/setup-node@v4
+      - uses: actions/setup-node@v5
         with:
           node-version: lts/*
       - name: Download build artifacts
-        uses: actions/download-artifact@v4
+        uses: actions/download-artifact@v5
         with:
           name: cdklabs-cdk-amazonmq-activemq-config-v5-15-16_build-artifact
           path: dist
@@ -162,15 +162,15 @@ jobs:
       contents: read
     if: ${{ needs.release.outputs.latest_commit == github.sha && needs.release.outputs.publish-cdklabs-cdk-amazonmq-activemq-config-v5-15-16 == 'true' }}
     steps:
-      - uses: actions/setup-java@v4
+      - uses: actions/setup-java@v5
         with:
           distribution: corretto
           java-version: "11"
-      - uses: actions/setup-node@v4
+      - uses: actions/setup-node@v5
         with:
           node-version: lts/*
       - name: Download build artifacts
-        uses: actions/download-artifact@v4
+        uses: actions/download-artifact@v5
         with:
           name: cdklabs-cdk-amazonmq-activemq-config-v5-15-16_build-artifact
           path: dist
@@ -194,14 +194,14 @@ jobs:
       contents: read
     if: ${{ needs.release.outputs.latest_commit == github.sha && needs.release.outputs.publish-cdklabs-cdk-amazonmq-activemq-config-v5-15-16 == 'true' }}
     steps:
-      - uses: actions/setup-node@v4
+      - uses: actions/setup-node@v5
         with:
           node-version: lts/*
-      - uses: actions/setup-python@v5
+      - uses: actions/setup-python@v6
         with:
           python-version: 3.x
       - name: Download build artifacts
-        uses: actions/download-artifact@v4
+        uses: actions/download-artifact@v5
         with:
           name: cdklabs-cdk-amazonmq-activemq-config-v5-15-16_build-artifact
           path: dist
@@ -221,14 +221,14 @@ jobs:
       contents: read
     if: ${{ needs.release.outputs.latest_commit == github.sha && needs.release.outputs.publish-cdklabs-cdk-amazonmq-activemq-config-v5-15-16 == 'true' }}
     steps:
-      - uses: actions/setup-node@v4
+      - uses: actions/setup-node@v5
         with:
           node-version: lts/*
-      - uses: actions/setup-dotnet@v4
+      - uses: actions/setup-dotnet@v5
         with:
           dotnet-version: 6.x
       - name: Download build artifacts
-        uses: actions/download-artifact@v4
+        uses: actions/download-artifact@v5
         with:
           name: cdklabs-cdk-amazonmq-activemq-config-v5-15-16_build-artifact
           path: dist
@@ -252,11 +252,11 @@ jobs:
       contents: write
     if: ${{ needs.release.outputs.latest_commit == github.sha && needs.release.outputs.publish-cdklabs-cdk-amazonmq-activemq-config-v5-16-7 == 'true' }}
     steps:
-      - uses: actions/setup-node@v4
+      - uses: actions/setup-node@v5
         with:
           node-version: lts/*
       - name: Download build artifacts
-        uses: actions/download-artifact@v4
+        uses: actions/download-artifact@v5
         with:
           name: cdklabs-cdk-amazonmq-activemq-config-v5-16-7_build-artifact
           path: dist
@@ -276,11 +276,11 @@ jobs:
       contents: read
     if: ${{ needs.release.outputs.latest_commit == github.sha && needs.release.outputs.publish-cdklabs-cdk-amazonmq-activemq-config-v5-16-7 == 'true' }}
     steps:
-      - uses: actions/setup-node@v4
+      - uses: actions/setup-node@v5
         with:
           node-version: lts/*
       - name: Download build artifacts
-        uses: actions/download-artifact@v4
+        uses: actions/download-artifact@v5
         with:
           name: cdklabs-cdk-amazonmq-activemq-config-v5-16-7_build-artifact
           path: dist
@@ -302,15 +302,15 @@ jobs:
       contents: read
     if: ${{ needs.release.outputs.latest_commit == github.sha && needs.release.outputs.publish-cdklabs-cdk-amazonmq-activemq-config-v5-16-7 == 'true' }}
     steps:
-      - uses: actions/setup-java@v4
+      - uses: actions/setup-java@v5
         with:
           distribution: corretto
           java-version: "11"
-      - uses: actions/setup-node@v4
+      - uses: actions/setup-node@v5
         with:
           node-version: lts/*
       - name: Download build artifacts
-        uses: actions/download-artifact@v4
+        uses: actions/download-artifact@v5
         with:
           name: cdklabs-cdk-amazonmq-activemq-config-v5-16-7_build-artifact
           path: dist
@@ -334,14 +334,14 @@ jobs:
       contents: read
     if: ${{ needs.release.outputs.latest_commit == github.sha && needs.release.outputs.publish-cdklabs-cdk-amazonmq-activemq-config-v5-16-7 == 'true' }}
     steps:
-      - uses: actions/setup-node@v4
+      - uses: actions/setup-node@v5
         with:
           node-version: lts/*
-      - uses: actions/setup-python@v5
+      - uses: actions/setup-python@v6
         with:
           python-version: 3.x
       - name: Download build artifacts
-        uses: actions/download-artifact@v4
+        uses: actions/download-artifact@v5
         with:
           name: cdklabs-cdk-amazonmq-activemq-config-v5-16-7_build-artifact
           path: dist
@@ -361,14 +361,14 @@ jobs:
       contents: read
     if: ${{ needs.release.outputs.latest_commit == github.sha && needs.release.outputs.publish-cdklabs-cdk-amazonmq-activemq-config-v5-16-7 == 'true' }}
     steps:
-      - uses: actions/setup-node@v4
+      - uses: actions/setup-node@v5
         with:
           node-version: lts/*
-      - uses: actions/setup-dotnet@v4
+      - uses: actions/setup-dotnet@v5
         with:
           dotnet-version: 6.x
       - name: Download build artifacts
-        uses: actions/download-artifact@v4
+        uses: actions/download-artifact@v5
         with:
           name: cdklabs-cdk-amazonmq-activemq-config-v5-16-7_build-artifact
           path: dist
@@ -392,11 +392,11 @@ jobs:
       contents: write
     if: ${{ needs.release.outputs.latest_commit == github.sha && needs.release.outputs.publish-cdklabs-cdk-amazonmq-activemq-config-v5-17-6 == 'true' }}
     steps:
-      - uses: actions/setup-node@v4
+      - uses: actions/setup-node@v5
         with:
           node-version: lts/*
       - name: Download build artifacts
-        uses: actions/download-artifact@v4
+        uses: actions/download-artifact@v5
         with:
           name: cdklabs-cdk-amazonmq-activemq-config-v5-17-6_build-artifact
           path: dist
@@ -416,11 +416,11 @@ jobs:
       contents: read
     if: ${{ needs.release.outputs.latest_commit == github.sha && needs.release.outputs.publish-cdklabs-cdk-amazonmq-activemq-config-v5-17-6 == 'true' }}
     steps:
-      - uses: actions/setup-node@v4
+      - uses: actions/setup-node@v5
         with:
           node-version: lts/*
       - name: Download build artifacts
-        uses: actions/download-artifact@v4
+        uses: actions/download-artifact@v5
         with:
           name: cdklabs-cdk-amazonmq-activemq-config-v5-17-6_build-artifact
           path: dist
@@ -442,15 +442,15 @@ jobs:
       contents: read
     if: ${{ needs.release.outputs.latest_commit == github.sha && needs.release.outputs.publish-cdklabs-cdk-amazonmq-activemq-config-v5-17-6 == 'true' }}
     steps:
-      - uses: actions/setup-java@v4
+      - uses: actions/setup-java@v5
         with:
           distribution: corretto
           java-version: "11"
-      - uses: actions/setup-node@v4
+      - uses: actions/setup-node@v5
         with:
           node-version: lts/*
       - name: Download build artifacts
-        uses: actions/download-artifact@v4
+        uses: actions/download-artifact@v5
         with:
           name: cdklabs-cdk-amazonmq-activemq-config-v5-17-6_build-artifact
           path: dist
@@ -474,14 +474,14 @@ jobs:
       contents: read
     if: ${{ needs.release.outputs.latest_commit == github.sha && needs.release.outputs.publish-cdklabs-cdk-amazonmq-activemq-config-v5-17-6 == 'true' }}
     steps:
-      - uses: actions/setup-node@v4
+      - uses: actions/setup-node@v5
         with:
           node-version: lts/*
-      - uses: actions/setup-python@v5
+      - uses: actions/setup-python@v6
         with:
           python-version: 3.x
       - name: Download build artifacts
-        uses: actions/download-artifact@v4
+        uses: actions/download-artifact@v5
         with:
           name: cdklabs-cdk-amazonmq-activemq-config-v5-17-6_build-artifact
           path: dist
@@ -501,14 +501,14 @@ jobs:
       contents: read
     if: ${{ needs.release.outputs.latest_commit == github.sha && needs.release.outputs.publish-cdklabs-cdk-amazonmq-activemq-config-v5-17-6 == 'true' }}
     steps:
-      - uses: actions/setup-node@v4
+      - uses: actions/setup-node@v5
         with:
           node-version: lts/*
-      - uses: actions/setup-dotnet@v4
+      - uses: actions/setup-dotnet@v5
         with:
           dotnet-version: 6.x
       - name: Download build artifacts
-        uses: actions/download-artifact@v4
+        uses: actions/download-artifact@v5
         with:
           name: cdklabs-cdk-amazonmq-activemq-config-v5-17-6_build-artifact
           path: dist
@@ -532,11 +532,11 @@ jobs:
       contents: write
     if: ${{ needs.release.outputs.latest_commit == github.sha && needs.release.outputs.publish-cdklabs-cdk-amazonmq-activemq-config-v5-18-4 == 'true' }}
     steps:
-      - uses: actions/setup-node@v4
+      - uses: actions/setup-node@v5
         with:
           node-version: lts/*
       - name: Download build artifacts
-        uses: actions/download-artifact@v4
+        uses: actions/download-artifact@v5
         with:
           name: cdklabs-cdk-amazonmq-activemq-config-v5-18-4_build-artifact
           path: dist
@@ -556,11 +556,11 @@ jobs:
       contents: read
     if: ${{ needs.release.outputs.latest_commit == github.sha && needs.release.outputs.publish-cdklabs-cdk-amazonmq-activemq-config-v5-18-4 == 'true' }}
     steps:
-      - uses: actions/setup-node@v4
+      - uses: actions/setup-node@v5
         with:
           node-version: lts/*
       - name: Download build artifacts
-        uses: actions/download-artifact@v4
+        uses: actions/download-artifact@v5
         with:
           name: cdklabs-cdk-amazonmq-activemq-config-v5-18-4_build-artifact
           path: dist
@@ -582,15 +582,15 @@ jobs:
       contents: read
     if: ${{ needs.release.outputs.latest_commit == github.sha && needs.release.outputs.publish-cdklabs-cdk-amazonmq-activemq-config-v5-18-4 == 'true' }}
     steps:
-      - uses: actions/setup-java@v4
+      - uses: actions/setup-java@v5
         with:
           distribution: corretto
           java-version: "11"
-      - uses: actions/setup-node@v4
+      - uses: actions/setup-node@v5
         with:
           node-version: lts/*
       - name: Download build artifacts
-        uses: actions/download-artifact@v4
+        uses: actions/download-artifact@v5
         with:
           name: cdklabs-cdk-amazonmq-activemq-config-v5-18-4_build-artifact
           path: dist
@@ -614,14 +614,14 @@ jobs:
       contents: read
     if: ${{ needs.release.outputs.latest_commit == github.sha && needs.release.outputs.publish-cdklabs-cdk-amazonmq-activemq-config-v5-18-4 == 'true' }}
     steps:
-      - uses: actions/setup-node@v4
+      - uses: actions/setup-node@v5
         with:
           node-version: lts/*
-      - uses: actions/setup-python@v5
+      - uses: actions/setup-python@v6
         with:
           python-version: 3.x
       - name: Download build artifacts
-        uses: actions/download-artifact@v4
+        uses: actions/download-artifact@v5
         with:
           name: cdklabs-cdk-amazonmq-activemq-config-v5-18-4_build-artifact
           path: dist
@@ -641,14 +641,14 @@ jobs:
       contents: read
     if: ${{ needs.release.outputs.latest_commit == github.sha && needs.release.outputs.publish-cdklabs-cdk-amazonmq-activemq-config-v5-18-4 == 'true' }}
     steps:
-      - uses: actions/setup-node@v4
+      - uses: actions/setup-node@v5
         with:
           node-version: lts/*
-      - uses: actions/setup-dotnet@v4
+      - uses: actions/setup-dotnet@v5
         with:
           dotnet-version: 6.x
       - name: Download build artifacts
-        uses: actions/download-artifact@v4
+        uses: actions/download-artifact@v5
         with:
           name: cdklabs-cdk-amazonmq-activemq-config-v5-18-4_build-artifact
           path: dist

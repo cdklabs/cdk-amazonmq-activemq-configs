@@ -18,9 +18,9 @@
   "devDependencies": {
     "@types/node": "^18",
     "@types/semver": "^7.7.1",
-    "cdklabs-projen-project-types": "^0.3.2",
+    "cdklabs-projen-project-types": "^0.3.3",
     "constructs": "^10.0.0",
-    "projen": "^0.96.0",
+    "projen": "^0.96.1",
     "ts-node": "^10.9.2",
     "typescript": "^5.9.2"
   },

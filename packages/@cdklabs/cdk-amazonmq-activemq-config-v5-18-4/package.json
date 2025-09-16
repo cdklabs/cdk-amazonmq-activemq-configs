@@ -36,7 +36,7 @@
   "devDependencies": {
     "@cdklabs/xsd2jsii": "^0.0.0",
     "@types/jest": "^29.5.14",
-    "@types/node": "^22.18.3",
+    "@types/node": "^22.18.4",
     "@typescript-eslint/eslint-plugin": "^8",
     "@typescript-eslint/parser": "^8",
     "commit-and-tag-version": "^12",
@@ -53,7 +53,7 @@
     "jsii-pacmak": "^1.114.1",
     "jsii-rosetta": "~5.7.0",
     "prettier": "^3.6.2",
-    "ts-jest": "^29.4.1",
+    "ts-jest": "^29.4.2",
     "typescript": "^5.9.2",
     "xsd-schema-validator": "^0.11.0"
   },

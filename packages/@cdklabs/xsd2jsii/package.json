@@ -22,7 +22,7 @@
   },
   "devDependencies": {
     "@types/jest": "^29.5.14",
-    "@types/node": "^22.18.7",
+    "@types/node": "^22.18.8",
     "@types/xml2js": "^0.4.14",
     "@typescript-eslint/eslint-plugin": "^8",
     "@typescript-eslint/parser": "^8",
@@ -36,7 +36,7 @@
     "jest-junit": "^16",
     "prettier": "^3.6.2",
     "ts-jest": "^29.4.4",
-    "typescript": "^5.9.2",
+    "typescript": "^5.9.3",
     "xsd-schema-validator": "^0.11.0"
   },
   "dependencies": {

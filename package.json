@@ -25,7 +25,7 @@
     "typescript": "^5.9.3"
   },
   "dependencies": {
-    "semver": "^7.7.2"
+    "semver": "^7.7.3"
   },
   "main": "lib/index.js",
   "license": "Apache-2.0",

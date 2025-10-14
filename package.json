@@ -20,7 +20,7 @@
     "@types/semver": "^7.7.1",
     "cdklabs-projen-project-types": "^0.3.5",
     "constructs": "^10.0.0",
-    "projen": "^0.97.2",
+    "projen": "^0.98.0",
     "ts-node": "^10.9.2",
     "typescript": "^5.9.3"
   },

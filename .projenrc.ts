@@ -90,6 +90,10 @@ for (const schema of schemas) {
     repository:
       "https://github.com/cdklabs/cdk-amazonmq-activemq-configs",
     devDeps: [xsd2jsii, 'xsd-schema-validator'],
+    typescriptVersion: "~5.4.0",
+    jestOptions: {
+      jestVersion: "^29",
+    },
     prettier: true,
     jest: true,
     disableTsconfig: true,
@@ -104,7 +108,6 @@ for (const schema of schemas) {
 
   new Jsii(schemaProject, {
     stability,
-    jsiiVersion: "~5.7.0",
     publishToPypi: {
       distName: `cdklabs.cdk-amazonmq-activemq-config-v${MAJOR}-${MINOR}-${PATCH}`,
       module: `cdklabs.cdk-amazonmq-activemq-config-v${MAJOR}-${MINOR}-${PATCH}`,

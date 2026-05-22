@@ -599,7 +599,7 @@ describe("XSD Validation", () => {
   ])("XSD Validated", async (node: IXmlNode) => {
     const xsdPath = path.join(
       __dirname,
-      "../../../../sources/amazon-mq-active-mq-5.17.6.xsd",
+      "../../../../sources/amazon-mq-active-mq-5.19.1.xsd",
     )
     const result = await validateXML(node.toXmlString(), xsdPath)
 

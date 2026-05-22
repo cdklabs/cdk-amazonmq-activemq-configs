@@ -47,5 +47,6 @@ packages/@cdklabs/cdk-amazonmq-activemq-config-v5-15-16/tsconfig.json
 packages/@cdklabs/cdk-amazonmq-activemq-config-v5-16-7/tsconfig.json
 packages/@cdklabs/cdk-amazonmq-activemq-config-v5-17-6/tsconfig.json
 packages/@cdklabs/cdk-amazonmq-activemq-config-v5-18-4/tsconfig.json
+packages/@cdklabs/cdk-amazonmq-activemq-config-v5-19-1/tsconfig.json
 !/.projenrc.ts
 !/.github/workflows/release.yml

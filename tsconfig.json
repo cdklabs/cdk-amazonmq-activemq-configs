@@ -44,6 +44,9 @@
     },
     {
       "path": "packages/@cdklabs/cdk-amazonmq-activemq-config-v5-18-4"
+    },
+    {
+      "path": "packages/@cdklabs/cdk-amazonmq-activemq-config-v5-19-1"
     }
   ]
 }

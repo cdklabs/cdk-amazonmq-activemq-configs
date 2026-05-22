@@ -158,7 +158,7 @@ export class Jsii extends pj.Component {
         ? // If jsiiVersion is "*", don't specify anything so the user can manage.
           ''
         : // Otherwise, use `jsiiVersion` or fall back to `1.x`.
-          `@${options.jsiiVersion ?? '~5.4.0'}`;
+          `@${options.jsiiVersion ?? '~5.8'}`;
     this.project.addDevDeps(`jsii${jsiiSuffix}`, `jsii-rosetta${jsiiSuffix}`, 'jsii-diff', 'jsii-pacmak');
 
     this.project.gitignore.exclude('.jsii', 'tsconfig.json');

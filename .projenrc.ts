@@ -11,6 +11,7 @@ import { ReleasableCommits, SampleDir, TextFile } from "projen";
 import { Jsii } from "./projenrc/jsii";
 import { Stability } from "projen/lib/cdk";
 import { SourceUpdate } from "./projenrc/update-source";
+import { NodePackageManager } from "projen/lib/javascript";
 
 const stability = Stability.EXPERIMENTAL;
 
@@ -44,6 +45,7 @@ const xsd2jsii = new TypeScriptWorkspace({
   parent: project,
   private: true,
   stability,
+  packageManager: NodePackageManager.YARN_CLASSIC,
   name: "@cdklabs/xsd2jsii",
   bin: {
     xsd2jsii: "bin/xsd2jsii",
@@ -84,6 +86,7 @@ for (const schema of schemas) {
   const schemaProject = new TypeScriptWorkspace({
     parent: project,
     stability,
+  packageManager: NodePackageManager.YARN_CLASSIC,
     name: `@cdklabs/cdk-amazonmq-activemq-config-v${MAJOR}-${MINOR}-${PATCH}`,
     authorName: "AWS",
     authorEmail: "cdk-amazonmq-maintainers@amazon.com",
@@ -108,9 +111,10 @@ for (const schema of schemas) {
 
   new Jsii(schemaProject, {
     stability,
+    jsiiVersion: '~5.9',
     publishToPypi: {
       distName: `cdklabs.cdk-amazonmq-activemq-config-v${MAJOR}-${MINOR}-${PATCH}`,
-      module: `cdklabs.cdk-amazonmq-activemq-config-v${MAJOR}-${MINOR}-${PATCH}`,
+      module: `cdklabs.cdk_amazonmq_activemq_config_v${MAJOR}_${MINOR}_${PATCH}`,
     },
     publishToNuget: {
       dotNetNamespace: `Cdklabs.CdkAmazonmq.ActiveMqConfig.V${MAJOR}_${MINOR}_${PATCH}`,
@@ -120,7 +124,7 @@ for (const schema of schemas) {
       javaPackage: `io.github.cdklabs.cdkamazonmqactivemqconfig.v${MAJOR}_${MINOR}_${PATCH}`,
       mavenGroupId: "io.github.cdklabs",
       mavenArtifactId: `cdk-amazonmq-activemq-config-v${MAJOR}-${MINOR}-${PATCH}`,
-      mavenEndpoint: 'https://s01.oss.sonatype.org'
+      // mavenEndpoint: 'https://s01.oss.sonatype.org'
     },
     // publishToGo: {
     //   moduleName: `github.com/cdklabs/cdk-amazonmq-activemq-config-v${MAJOR}_${MINOR}_${PATCH}`,

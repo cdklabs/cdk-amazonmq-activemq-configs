@@ -19,9 +19,7 @@ export class XsdTypePatch implements IXsdTypeSystemPatch {
   }
 }
 
-export class XsdElementPropertyAssignableTypePatch
-  implements IXsdTypeSystemPatch
-{
+export class XsdElementPropertyAssignableTypePatch implements IXsdTypeSystemPatch {
   constructor(
     public readonly elementName: string,
     public readonly propertyName: string,
@@ -50,9 +48,10 @@ export class XsdElementPropertyAssignableTypePatch
   }
 }
 
-export class XsdTypeSystem
-  implements ITypeSystem<IXsdType, IXsdTypeSystemPatch>
-{
+export class XsdTypeSystem implements ITypeSystem<
+  IXsdType,
+  IXsdTypeSystemPatch
+> {
   public readonly types: IXsdType[];
 
   constructor(types: IXsdType[]) {

@@ -1,31 +1,38 @@
 {
   "name": "@cdklabs/cdk-amazonmq-activemq-configs",
   "scripts": {
-    "build": "npx projen build",
-    "clobber": "npx projen clobber",
-    "compile": "npx projen compile",
-    "default": "npx projen default",
-    "package": "npx projen package",
-    "post-upgrade": "npx projen post-upgrade",
-    "release": "npx projen release",
-    "run": "npx projen run",
-    "test": "npx projen test",
-    "update-sources:all": "npx projen update-sources:all",
-    "update-sources:config-xsd": "npx projen update-sources:config-xsd",
-    "upgrade": "npx projen upgrade",
-    "projen": "npx projen"
+    "build": "projen build",
+    "clobber": "projen clobber",
+    "compile": "projen compile",
+    "default": "projen default",
+    "package": "projen package",
+    "post-upgrade": "projen post-upgrade",
+    "release": "projen release",
+    "run": "projen run",
+    "test": "projen test",
+    "update-sources:all": "projen update-sources:all",
+    "update-sources:config-xsd": "projen update-sources:config-xsd",
+    "upgrade": "projen upgrade",
+    "projen": "projen"
   },
   "devDependencies": {
     "@types/node": "^18",
     "@types/semver": "^7.7.1",
     "cdklabs-projen-project-types": "^0.3.9",
     "constructs": "^10.0.0",
-    "projen": "^0.98.11",
+    "projen": "^0.99.63",
     "ts-node": "^10.9.2",
     "typescript": "^5.9.3"
   },
   "dependencies": {
     "semver": "^7.7.3"
+  },
+  "devEngines": {
+    "packageManager": {
+      "name": "yarn",
+      "version": "1.22.22",
+      "onFail": "ignore"
+    }
   },
   "main": "lib/index.js",
   "license": "Apache-2.0",

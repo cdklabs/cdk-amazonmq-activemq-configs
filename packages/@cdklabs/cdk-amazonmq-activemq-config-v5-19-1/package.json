@@ -1,9 +1,9 @@
 {
-  "name": "@cdklabs/cdk-amazonmq-activemq-config-v5-15-16",
+  "name": "@cdklabs/cdk-amazonmq-activemq-config-v5-19-1",
   "repository": {
     "type": "git",
     "url": "https://github.com/cdklabs/cdk-amazonmq-activemq-configs",
-    "directory": "packages/@cdklabs/cdk-amazonmq-activemq-config-v5-15-16"
+    "directory": "packages/@cdklabs/cdk-amazonmq-activemq-config-v5-19-1"
   },
   "scripts": {
     "build": "projen build",
@@ -43,16 +43,16 @@
     "constructs": "^10.0.0",
     "eslint": "^9",
     "eslint-config-prettier": "^10.1.8",
-    "eslint-import-resolver-typescript": "^3.10.1",
+    "eslint-import-resolver-typescript": "^4.4.4",
     "eslint-plugin-import": "^2.32.0",
-    "eslint-plugin-prettier": "^5.5.4",
+    "eslint-plugin-prettier": "^5.5.5",
     "jest": "^29",
     "jest-junit": "^17",
     "jsii": "~5.9",
-    "jsii-diff": "^1.119.0",
-    "jsii-pacmak": "^1.119.0",
+    "jsii-diff": "^1.131.0",
+    "jsii-pacmak": "^1.131.0",
     "jsii-rosetta": "~5.9",
-    "prettier": "^3.6.2",
+    "prettier": "^3.8.3",
     "ts-jest": "^29",
     "typescript": "~5.4.0",
     "xsd-schema-validator": "^0.11.0"
@@ -119,19 +119,19 @@
     "outdir": "dist",
     "targets": {
       "java": {
-        "package": "io.github.cdklabs.cdkamazonmqactivemqconfig.v5_15_16",
+        "package": "io.github.cdklabs.cdkamazonmqactivemqconfig.v5_19_1",
         "maven": {
           "groupId": "io.github.cdklabs",
-          "artifactId": "cdk-amazonmq-activemq-config-v5-15-16"
+          "artifactId": "cdk-amazonmq-activemq-config-v5-19-1"
         }
       },
       "python": {
-        "distName": "cdklabs.cdk-amazonmq-activemq-config-v5-15-16",
-        "module": "cdklabs.cdk_amazonmq_activemq_config_v5_15_16"
+        "distName": "cdklabs.cdk-amazonmq-activemq-config-v5-19-1",
+        "module": "cdklabs.cdk_amazonmq_activemq_config_v5_19_1"
       },
       "dotnet": {
-        "namespace": "Cdklabs.CdkAmazonmq.ActiveMqConfig.V5_15_16",
-        "packageId": "Cdklabs.CdkAmazonmq.ActiveMqConfig.V5-15-16"
+        "namespace": "Cdklabs.CdkAmazonmq.ActiveMqConfig.V5_19_1",
+        "packageId": "Cdklabs.CdkAmazonmq.ActiveMqConfig.V5-19-1"
       }
     },
     "tsc": {

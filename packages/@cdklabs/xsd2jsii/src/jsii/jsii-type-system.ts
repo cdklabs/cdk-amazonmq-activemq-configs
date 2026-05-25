@@ -9,9 +9,10 @@ export interface IJsiiTypeSystemPatch extends ITypeSystemPatch<IJsiiType> {
   patch(rawTypes: IJsiiType[]): void;
 }
 
-export class JsiiTypeSystem
-  implements ITypeSystem<IJsiiType, IJsiiTypeSystemPatch>
-{
+export class JsiiTypeSystem implements ITypeSystem<
+  IJsiiType,
+  IJsiiTypeSystemPatch
+> {
   constructor(public readonly types: IJsiiType[]) {}
 
   patch(typeSystemPatch: IJsiiTypeSystemPatch): void {

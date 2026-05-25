@@ -98,17 +98,14 @@ export interface XsdToJsiiTypeSystemConverterProps {
  * Implements a conversion between the XsdTypeSystem and the JsiiTypeSystem.
  * @experimental
  */
-export class XsdToJsiiTypeSystemConverter
-  implements
-    ITypeSystemConverter<
-      IXsdType,
-      IXsdTypeSystemPatch,
-      XsdTypeSystem,
-      IJsiiType,
-      IJsiiTypeSystemPatch,
-      JsiiTypeSystem
-    >
-{
+export class XsdToJsiiTypeSystemConverter implements ITypeSystemConverter<
+  IXsdType,
+  IXsdTypeSystemPatch,
+  XsdTypeSystem,
+  IJsiiType,
+  IJsiiTypeSystemPatch,
+  JsiiTypeSystem
+> {
   private readonly xmlNodeFileRelativePath: string;
   private readonly relativePath: (from: string, to: string) => string;
   private readonly propertyOverrides: Map<string, string>;

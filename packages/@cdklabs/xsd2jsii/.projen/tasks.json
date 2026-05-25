@@ -37,7 +37,7 @@
       },
       "steps": [
         {
-          "exec": "npx npm-check-updates@18 --upgrade --target=minor --peer --no-deprecated --dep=dev,peer,prod,optional --filter=@types/jest,@types/node,@types/xml2js,eslint-config-prettier,eslint-import-resolver-typescript,eslint-plugin-import,eslint-plugin-prettier,jest,prettier,ts-jest,typescript,xsd-schema-validator,@faker-js/faker,json5,xml2js"
+          "exec": "npx npm-check-updates@20 --upgrade --target=minor --peer --no-deprecated --dep=dev,peer,prod,optional --filter=@types/jest,@types/node,@types/xml2js,eslint-config-prettier,eslint-import-resolver-typescript,eslint-plugin-import,eslint-plugin-prettier,jest,prettier,ts-jest,typescript,xsd-schema-validator,@faker-js/faker,json5,xml2js"
         }
       ]
     },
@@ -56,7 +56,8 @@
       "description": "Synthesize project files",
       "steps": [
         {
-          "exec": "cd ../../.. && npx projen default"
+          "exec": "projen default",
+          "cwd": "../../.."
         }
       ]
     },

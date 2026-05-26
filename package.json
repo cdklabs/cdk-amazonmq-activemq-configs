@@ -18,14 +18,14 @@
   "devDependencies": {
     "@types/node": "^18",
     "@types/semver": "^7.7.1",
-    "cdklabs-projen-project-types": "^0.3.9",
+    "cdklabs-projen-project-types": "^0.3.36",
     "constructs": "^10.0.0",
-    "projen": "^0.99.63",
+    "projen": "^0.99.65",
     "ts-node": "^10.9.2",
     "typescript": "^5.9.3"
   },
   "dependencies": {
-    "semver": "^7.7.3"
+    "semver": "^7.8.1"
   },
   "devEngines": {
     "packageManager": {

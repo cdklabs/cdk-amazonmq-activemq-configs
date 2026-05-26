@@ -17,4 +17,5 @@
 /README.md linguist-generated
 /test/generated.test.ts linguist-generated
 /tsconfig.dev.json linguist-generated linguist-language=JSON-with-Comments
+/tsconfig.json linguist-generated
 /yarn.lock linguist-generated

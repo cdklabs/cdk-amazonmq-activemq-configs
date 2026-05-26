@@ -46,4 +46,5 @@ junit.xml
 !/README.md
 .jsii
 tsconfig.json
+!/tsconfig.json
 !/test/generated.test.ts

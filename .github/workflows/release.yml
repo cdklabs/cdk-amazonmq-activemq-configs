@@ -153,8 +153,9 @@ jobs:
       - name: Download build artifacts
         uses: actions/download-artifact@v8
         with:
-          name: cdklabs-cdk-amazonmq-activemq-config-v5-15-16_build-artifact
+          artifact-ids: ${{ needs.release.outputs.artifact_id }}
           path: dist
+          name: cdklabs-cdk-amazonmq-activemq-config-v5-15-16_build-artifact
       - name: Restore build artifact permissions
         run: cd dist && setfacl --restore=permissions-backup.acl
         continue-on-error: true
@@ -180,8 +181,9 @@ jobs:
       - name: Download build artifacts
         uses: actions/download-artifact@v8
         with:
-          name: cdklabs-cdk-amazonmq-activemq-config-v5-15-16_build-artifact
+          artifact-ids: ${{ needs.release.outputs.artifact_id }}
           path: dist
+          name: cdklabs-cdk-amazonmq-activemq-config-v5-15-16_build-artifact
       - name: Restore build artifact permissions
         run: cd dist && setfacl --restore=permissions-backup.acl
         continue-on-error: true
@@ -213,8 +215,9 @@ jobs:
       - name: Download build artifacts
         uses: actions/download-artifact@v8
         with:
-          name: cdklabs-cdk-amazonmq-activemq-config-v5-15-16_build-artifact
+          artifact-ids: ${{ needs.release.outputs.artifact_id }}
           path: dist
+          name: cdklabs-cdk-amazonmq-activemq-config-v5-15-16_build-artifact
       - name: Restore build artifact permissions
         run: cd dist && setfacl --restore=permissions-backup.acl
         continue-on-error: true
@@ -248,8 +251,9 @@ jobs:
       - name: Download build artifacts
         uses: actions/download-artifact@v8
         with:
-          name: cdklabs-cdk-amazonmq-activemq-config-v5-15-16_build-artifact
+          artifact-ids: ${{ needs.release.outputs.artifact_id }}
           path: dist
+          name: cdklabs-cdk-amazonmq-activemq-config-v5-15-16_build-artifact
       - name: Restore build artifact permissions
         run: cd dist && setfacl --restore=permissions-backup.acl
         continue-on-error: true
@@ -279,8 +283,9 @@ jobs:
       - name: Download build artifacts
         uses: actions/download-artifact@v8
         with:
-          name: cdklabs-cdk-amazonmq-activemq-config-v5-15-16_build-artifact
+          artifact-ids: ${{ needs.release.outputs.artifact_id }}
           path: dist
+          name: cdklabs-cdk-amazonmq-activemq-config-v5-15-16_build-artifact
       - name: Restore build artifact permissions
         run: cd dist && setfacl --restore=permissions-backup.acl
         continue-on-error: true
@@ -310,8 +315,9 @@ jobs:
       - name: Download build artifacts
         uses: actions/download-artifact@v8
         with:
-          name: cdklabs-cdk-amazonmq-activemq-config-v5-16-7_build-artifact
+          artifact-ids: ${{ needs.release.outputs.artifact_id }}
           path: dist
+          name: cdklabs-cdk-amazonmq-activemq-config-v5-16-7_build-artifact
       - name: Restore build artifact permissions
         run: cd dist && setfacl --restore=permissions-backup.acl
         continue-on-error: true
@@ -337,8 +343,9 @@ jobs:
       - name: Download build artifacts
         uses: actions/download-artifact@v8
         with:
-          name: cdklabs-cdk-amazonmq-activemq-config-v5-16-7_build-artifact
+          artifact-ids: ${{ needs.release.outputs.artifact_id }}
           path: dist
+          name: cdklabs-cdk-amazonmq-activemq-config-v5-16-7_build-artifact
       - name: Restore build artifact permissions
         run: cd dist && setfacl --restore=permissions-backup.acl
         continue-on-error: true
@@ -370,8 +377,9 @@ jobs:
       - name: Download build artifacts
         uses: actions/download-artifact@v8
         with:
-          name: cdklabs-cdk-amazonmq-activemq-config-v5-16-7_build-artifact
+          artifact-ids: ${{ needs.release.outputs.artifact_id }}
           path: dist
+          name: cdklabs-cdk-amazonmq-activemq-config-v5-16-7_build-artifact
       - name: Restore build artifact permissions
         run: cd dist && setfacl --restore=permissions-backup.acl
         continue-on-error: true
@@ -405,8 +413,9 @@ jobs:
       - name: Download build artifacts
         uses: actions/download-artifact@v8
         with:
-          name: cdklabs-cdk-amazonmq-activemq-config-v5-16-7_build-artifact
+          artifact-ids: ${{ needs.release.outputs.artifact_id }}
           path: dist
+          name: cdklabs-cdk-amazonmq-activemq-config-v5-16-7_build-artifact
       - name: Restore build artifact permissions
         run: cd dist && setfacl --restore=permissions-backup.acl
         continue-on-error: true
@@ -436,8 +445,9 @@ jobs:
       - name: Download build artifacts
         uses: actions/download-artifact@v8
         with:
-          name: cdklabs-cdk-amazonmq-activemq-config-v5-16-7_build-artifact
+          artifact-ids: ${{ needs.release.outputs.artifact_id }}
           path: dist
+          name: cdklabs-cdk-amazonmq-activemq-config-v5-16-7_build-artifact
       - name: Restore build artifact permissions
         run: cd dist && setfacl --restore=permissions-backup.acl
         continue-on-error: true
@@ -467,8 +477,9 @@ jobs:
       - name: Download build artifacts
         uses: actions/download-artifact@v8
         with:
-          name: cdklabs-cdk-amazonmq-activemq-config-v5-17-6_build-artifact
+          artifact-ids: ${{ needs.release.outputs.artifact_id }}
           path: dist
+          name: cdklabs-cdk-amazonmq-activemq-config-v5-17-6_build-artifact
       - name: Restore build artifact permissions
         run: cd dist && setfacl --restore=permissions-backup.acl
         continue-on-error: true
@@ -494,8 +505,9 @@ jobs:
       - name: Download build artifacts
         uses: actions/download-artifact@v8
         with:
-          name: cdklabs-cdk-amazonmq-activemq-config-v5-17-6_build-artifact
+          artifact-ids: ${{ needs.release.outputs.artifact_id }}
           path: dist
+          name: cdklabs-cdk-amazonmq-activemq-config-v5-17-6_build-artifact
       - name: Restore build artifact permissions
         run: cd dist && setfacl --restore=permissions-backup.acl
         continue-on-error: true
@@ -527,8 +539,9 @@ jobs:
       - name: Download build artifacts
         uses: actions/download-artifact@v8
         with:
-          name: cdklabs-cdk-amazonmq-activemq-config-v5-17-6_build-artifact
+          artifact-ids: ${{ needs.release.outputs.artifact_id }}
           path: dist
+          name: cdklabs-cdk-amazonmq-activemq-config-v5-17-6_build-artifact
       - name: Restore build artifact permissions
         run: cd dist && setfacl --restore=permissions-backup.acl
         continue-on-error: true
@@ -562,8 +575,9 @@ jobs:
       - name: Download build artifacts
         uses: actions/download-artifact@v8
         with:
-          name: cdklabs-cdk-amazonmq-activemq-config-v5-17-6_build-artifact
+          artifact-ids: ${{ needs.release.outputs.artifact_id }}
           path: dist
+          name: cdklabs-cdk-amazonmq-activemq-config-v5-17-6_build-artifact
       - name: Restore build artifact permissions
         run: cd dist && setfacl --restore=permissions-backup.acl
         continue-on-error: true
@@ -593,8 +607,9 @@ jobs:
       - name: Download build artifacts
         uses: actions/download-artifact@v8
         with:
-          name: cdklabs-cdk-amazonmq-activemq-config-v5-17-6_build-artifact
+          artifact-ids: ${{ needs.release.outputs.artifact_id }}
           path: dist
+          name: cdklabs-cdk-amazonmq-activemq-config-v5-17-6_build-artifact
       - name: Restore build artifact permissions
         run: cd dist && setfacl --restore=permissions-backup.acl
         continue-on-error: true
@@ -624,8 +639,9 @@ jobs:
       - name: Download build artifacts
         uses: actions/download-artifact@v8
         with:
-          name: cdklabs-cdk-amazonmq-activemq-config-v5-18-4_build-artifact
+          artifact-ids: ${{ needs.release.outputs.artifact_id }}
           path: dist
+          name: cdklabs-cdk-amazonmq-activemq-config-v5-18-4_build-artifact
       - name: Restore build artifact permissions
         run: cd dist && setfacl --restore=permissions-backup.acl
         continue-on-error: true
@@ -651,8 +667,9 @@ jobs:
       - name: Download build artifacts
         uses: actions/download-artifact@v8
         with:
-          name: cdklabs-cdk-amazonmq-activemq-config-v5-18-4_build-artifact
+          artifact-ids: ${{ needs.release.outputs.artifact_id }}
           path: dist
+          name: cdklabs-cdk-amazonmq-activemq-config-v5-18-4_build-artifact
       - name: Restore build artifact permissions
         run: cd dist && setfacl --restore=permissions-backup.acl
         continue-on-error: true
@@ -684,8 +701,9 @@ jobs:
       - name: Download build artifacts
         uses: actions/download-artifact@v8
         with:
-          name: cdklabs-cdk-amazonmq-activemq-config-v5-18-4_build-artifact
+          artifact-ids: ${{ needs.release.outputs.artifact_id }}
           path: dist
+          name: cdklabs-cdk-amazonmq-activemq-config-v5-18-4_build-artifact
       - name: Restore build artifact permissions
         run: cd dist && setfacl --restore=permissions-backup.acl
         continue-on-error: true
@@ -719,8 +737,9 @@ jobs:
       - name: Download build artifacts
         uses: actions/download-artifact@v8
         with:
-          name: cdklabs-cdk-amazonmq-activemq-config-v5-18-4_build-artifact
+          artifact-ids: ${{ needs.release.outputs.artifact_id }}
           path: dist
+          name: cdklabs-cdk-amazonmq-activemq-config-v5-18-4_build-artifact
       - name: Restore build artifact permissions
         run: cd dist && setfacl --restore=permissions-backup.acl
         continue-on-error: true
@@ -750,8 +769,9 @@ jobs:
       - name: Download build artifacts
         uses: actions/download-artifact@v8
         with:
-          name: cdklabs-cdk-amazonmq-activemq-config-v5-18-4_build-artifact
+          artifact-ids: ${{ needs.release.outputs.artifact_id }}
           path: dist
+          name: cdklabs-cdk-amazonmq-activemq-config-v5-18-4_build-artifact
       - name: Restore build artifact permissions
         run: cd dist && setfacl --restore=permissions-backup.acl
         continue-on-error: true
@@ -781,8 +801,9 @@ jobs:
       - name: Download build artifacts
         uses: actions/download-artifact@v8
         with:
-          name: cdklabs-cdk-amazonmq-activemq-config-v5-19-1_build-artifact
+          artifact-ids: ${{ needs.release.outputs.artifact_id }}
           path: dist
+          name: cdklabs-cdk-amazonmq-activemq-config-v5-19-1_build-artifact
       - name: Restore build artifact permissions
         run: cd dist && setfacl --restore=permissions-backup.acl
         continue-on-error: true
@@ -808,8 +829,9 @@ jobs:
       - name: Download build artifacts
         uses: actions/download-artifact@v8
         with:
-          name: cdklabs-cdk-amazonmq-activemq-config-v5-19-1_build-artifact
+          artifact-ids: ${{ needs.release.outputs.artifact_id }}
           path: dist
+          name: cdklabs-cdk-amazonmq-activemq-config-v5-19-1_build-artifact
       - name: Restore build artifact permissions
         run: cd dist && setfacl --restore=permissions-backup.acl
         continue-on-error: true
@@ -841,8 +863,9 @@ jobs:
       - name: Download build artifacts
         uses: actions/download-artifact@v8
         with:
-          name: cdklabs-cdk-amazonmq-activemq-config-v5-19-1_build-artifact
+          artifact-ids: ${{ needs.release.outputs.artifact_id }}
           path: dist
+          name: cdklabs-cdk-amazonmq-activemq-config-v5-19-1_build-artifact
       - name: Restore build artifact permissions
         run: cd dist && setfacl --restore=permissions-backup.acl
         continue-on-error: true
@@ -876,8 +899,9 @@ jobs:
       - name: Download build artifacts
         uses: actions/download-artifact@v8
         with:
-          name: cdklabs-cdk-amazonmq-activemq-config-v5-19-1_build-artifact
+          artifact-ids: ${{ needs.release.outputs.artifact_id }}
           path: dist
+          name: cdklabs-cdk-amazonmq-activemq-config-v5-19-1_build-artifact
       - name: Restore build artifact permissions
         run: cd dist && setfacl --restore=permissions-backup.acl
         continue-on-error: true
@@ -907,8 +931,9 @@ jobs:
       - name: Download build artifacts
         uses: actions/download-artifact@v8
         with:
-          name: cdklabs-cdk-amazonmq-activemq-config-v5-19-1_build-artifact
+          artifact-ids: ${{ needs.release.outputs.artifact_id }}
           path: dist
+          name: cdklabs-cdk-amazonmq-activemq-config-v5-19-1_build-artifact
       - name: Restore build artifact permissions
         run: cd dist && setfacl --restore=permissions-backup.acl
         continue-on-error: true

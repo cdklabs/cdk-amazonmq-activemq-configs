@@ -1550,10 +1550,10 @@ case@^1.6.3:
   resolved "https://registry.yarnpkg.com/case/-/case-1.6.3.tgz#0a4386e3e9825351ca2e6216c60467ff5f1ea1c9"
   integrity sha512-mzDSXIPaFwVDvZAHqZ9VlbyF4yyXRuX6IvB06WvPYkqJVO24kX1PPhv9bfpKNFZyxYFmmgo03HUiD8iklmJYRQ==
 
-cdklabs-projen-project-types@^0.3.36:
-  version "0.3.36"
-  resolved "https://registry.yarnpkg.com/cdklabs-projen-project-types/-/cdklabs-projen-project-types-0.3.36.tgz#ac79ebca75d0e805ece6da2431f1fd85b665eecb"
-  integrity sha512-YDPNihFj6TPzoC812c6qY4+2/ISDCRJmied78V2WsG6AYaeUXCJT3p9xKPdOATTsA0jtPAYiRq6Eh1wlV2B9aA==
+cdklabs-projen-project-types@^0.4.0:
+  version "0.4.0"
+  resolved "https://registry.yarnpkg.com/cdklabs-projen-project-types/-/cdklabs-projen-project-types-0.4.0.tgz#4876207689d56a692e80e6ff36e49dac4ff53069"
+  integrity sha512-iyKQpDL5b21rYcWnWzr+aHUT96ysdRcPecK1qRvd4muPmC7PEZgT9XS0Lvld1PBHYjBxSw8Kqify19HLqU5BHQ==
   dependencies:
     yaml "^2.9.0"
 
@@ -1719,7 +1719,7 @@ concat-stream@^2.0.0:
     readable-stream "^3.0.2"
     typedarray "^0.0.6"
 
-constructs@^10.0.0:
+constructs@^10.0.0, constructs@^10.5.0:
   version "10.6.0"
   resolved "https://registry.yarnpkg.com/constructs/-/constructs-10.6.0.tgz#9ec889c48567182ed9e2a56d4335d582ba0bcb6b"
   integrity sha512-TxHOnBO5zMo/G76ykzGF/wMpEHu257TbWiIxP9K0Yv/+t70UzgBQiTqjkAsWOPC6jW91DzJI0+ehQV6xDRNBuQ==
@@ -2080,9 +2080,9 @@ dunder-proto@^1.0.0, dunder-proto@^1.0.1:
     gopd "^1.2.0"
 
 electron-to-chromium@^1.5.328:
-  version "1.5.362"
-  resolved "https://registry.yarnpkg.com/electron-to-chromium/-/electron-to-chromium-1.5.362.tgz#0696661e1e8ea46248e82f62f0a0bfe1aac2ce76"
-  integrity sha512-PUY2DrLvkjkUuWqq+KPL2iWshrJsZOcIojzRQ7eXFacc9dWga7MGMJAa15VbiejSZB1PAXaRLAiKgruHP8LB1w==
+  version "1.5.363"
+  resolved "https://registry.yarnpkg.com/electron-to-chromium/-/electron-to-chromium-1.5.363.tgz#6e9ee6bbb98d4aa12e96853e89993990d577eec8"
+  integrity sha512-VjUKPyWzGnT1fujlkEGC/BvN70Hh70KXtAqcmniXviYlJC/ivcT+BWGPyxWVbJZLfvtKR6dqg1L7T7pgAMBtWA==
 
 emittery@^0.13.1:
   version "0.13.1"
@@ -4482,16 +4482,16 @@ process-nextick-args@~2.0.0:
   resolved "https://registry.yarnpkg.com/process-nextick-args/-/process-nextick-args-2.0.1.tgz#7820d9b16120cc55ca9ae7792680ae7dba6d7fe2"
   integrity sha512-3ouUOpQhtgrbOa17J7+uxOTpITYWaGP7/AhoR3+A+/1e9skrzelGi/dXzEYyvbxubEF6Wn2ypscTKiKJFFn1ag==
 
-projen@^0.99.66:
-  version "0.99.66"
-  resolved "https://registry.yarnpkg.com/projen/-/projen-0.99.66.tgz#dd04ceb7b1bfdce01ef25d8830a1cf08baefb061"
-  integrity sha512-B0zDIYCG7wZ5SP4unIFhxqiz4+66SSxk5sCdxu3Py6O8aIlc38MAVqafpgZL6ov7xv1qJ1YItAH/ZK6MiJ6U0Q==
+projen@^0.99.68:
+  version "0.99.68"
+  resolved "https://registry.yarnpkg.com/projen/-/projen-0.99.68.tgz#0653e9d6093a128154f3929bd077d4e85eb01b65"
+  integrity sha512-s0E+caG9LzJTFY3cEAhLBz3IS/rsRaVQdFO/dm6X7M062ZnBn+x5q01ItdyGSaz77rP52QFPO6nT+1DYTutlYQ==
   dependencies:
     "@iarna/toml" "^2.2.5"
     case "^1.6.3"
     chalk "^4.1.2"
     comment-json "4.2.2"
-    constructs "^10.0.0"
+    constructs "^10.5.0"
     conventional-changelog-config-spec "^2.1.0"
     fast-glob "^3.3.3"
     fast-json-patch "^3.1.1"

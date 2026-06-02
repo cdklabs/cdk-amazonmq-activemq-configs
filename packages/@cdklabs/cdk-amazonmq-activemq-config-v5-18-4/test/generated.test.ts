@@ -1,5 +1,5 @@
-import * as path from "path";
-import { validateXML } from "xsd-schema-validator";
+import * as path from "path"
+import { validateXML } from "xsd-schema-validator"
 import {
   AbortSlowAckConsumerStrategy,
   AbortSlowConsumerStrategy,
@@ -70,7 +70,7 @@ import {
   // VmCursor,
   // VmDurableCursor,
   // VmQueueCursor,
-} from "../src";
+} from "../src"
 
 describe("XSD Validation", () => {
   test.each([
@@ -220,7 +220,7 @@ describe("XSD Validation", () => {
           }),
         ],
       },
-    ),
+    )
     // , new VmQueueCursor()
     // , new VmDurableCursor()
     // , new VmCursor()
@@ -237,7 +237,7 @@ describe("XSD Validation", () => {
     // , new FileQueueCursor()
     // , new FileDurableSubscriberCursor()
     // , new FileCursor()
-    new VirtualTopic({
+    , new VirtualTopic({
       concurrentSend: false,
       local: false,
       name: "a",
@@ -245,39 +245,39 @@ describe("XSD Validation", () => {
       prefix: "m",
       selectorAware: true,
       transactedSend: true,
-    }),
-    new UniquePropertyMessageEvictionStrategy({
+    })
+    , new UniquePropertyMessageEvictionStrategy({
       evictExpiredMessagesHighWatermark: 1,
       propertyName: "i",
-    }),
-    new TransportConnector({
+    })
+    , new TransportConnector({
       name: Protocol.OPENWIRE,
       updateClusterClients: false,
       rebalanceClusterClients: true,
       updateClusterClientsOnRemove: true,
-    }),
-    new Topic({
+    })
+    , new Topic({
       dlq: false,
       physicalName: "y",
-    }),
-    new TimedSubscriptionRecoveryPolicy({
+    })
+    , new TimedSubscriptionRecoveryPolicy({
       recoverDuration: 100,
-    }),
-    new TimeStampingBrokerPlugin({
+    })
+    , new TimeStampingBrokerPlugin({
       futureOnly: false,
       processNetworkMessages: false,
       ttlCeiling: 100,
       zeroExpirationOverride: 100,
-    }),
-    new TempTopic({
+    })
+    , new TempTopic({
       dlq: true,
       physicalName: "S",
-    }),
-    new TempQueue({
+    })
+    , new TempQueue({
       dlq: false,
       physicalName: "J",
-    }),
-    new TempDestinationAuthorizationEntry({
+    })
+    , new TempDestinationAuthorizationEntry({
       admin: "F",
       queue: "a",
       read: "U",
@@ -285,12 +285,12 @@ describe("XSD Validation", () => {
       tempTopic: true,
       topic: "2",
       write: "J",
-    }),
-    new StoreDurableSubscriberCursor({
+    })
+    , new StoreDurableSubscriberCursor({
       immediatePriorityDispatch: true,
       useCache: false,
-    }),
-    new RedeliveryPolicy({
+    })
+    , new RedeliveryPolicy({
       backOffMultiplier: 1,
       collisionAvoidancePercent: 1,
       initialRedeliveryDelay: 100,
@@ -304,44 +304,44 @@ describe("XSD Validation", () => {
       topic: "E",
       useCollisionAvoidance: true,
       useExponentialBackOff: false,
-    }),
-    new Queue({
+    })
+    , new Queue({
       dlq: false,
       physicalName: "e",
-    }),
-    new QueryBasedSubscriptionRecoveryPolicy({
+    })
+    , new QueryBasedSubscriptionRecoveryPolicy({
       query: "O",
-    }),
-    new PrefetchRatePendingMessageLimitStrategy({
+    })
+    , new PrefetchRatePendingMessageLimitStrategy({
       multiplier: 1,
-    }),
-    new OldestMessageWithLowestPriorityEvictionStrategy({
+    })
+    , new OldestMessageWithLowestPriorityEvictionStrategy({
       evictExpiredMessagesHighWatermark: 1,
-    }),
-    new OldestMessageEvictionStrategy({
+    })
+    , new OldestMessageEvictionStrategy({
       evictExpiredMessagesHighWatermark: 1,
-    }),
-    new MirroredQueue({
+    })
+    , new MirroredQueue({
       copyMessage: true,
       postfix: "5",
       prefix: "s",
-    }),
-    new MessageGroupHashBucketFactory({
+    })
+    , new MessageGroupHashBucketFactory({
       bucketCount: 1,
       cacheSize: 1,
-    }),
-    new MemoryUsage({
+    })
+    , new MemoryUsage({
       percentOfJvmHeap: 1,
-    }),
-    new KahaDB({
+    })
+    , new KahaDB({
       concurrentStoreAndDispatchQueues: true,
       checkpointInterval: 5000,
       indexWriteBatchSize: 1000,
       journalDiskSyncInterval: 1,
       journalDiskSyncStrategy: JournalDiskSyncStrategy.ALWAYS,
       preallocationStrategy: PreallocationStrategy.ZEROS,
-    }),
-    new IndividualDeadLetterStrategy({
+    })
+    , new IndividualDeadLetterStrategy({
       destinationPerDurableSubscriber: true,
       enableAudit: true,
       expiration: 100,
@@ -355,30 +355,30 @@ describe("XSD Validation", () => {
       topicSuffix: "s",
       useQueueForQueueMessages: false,
       useQueueForTopicMessages: true,
-    }),
-    new ForcePersistencyModeBrokerPlugin({
+    })
+    , new ForcePersistencyModeBrokerPlugin({
       persistenceFlag: false,
-    }),
-    new FixedSizedSubscriptionRecoveryPolicy({
+    })
+    , new FixedSizedSubscriptionRecoveryPolicy({
       maximumSize: 1,
       useSharedBuffer: true,
-    }),
-    new FixedCountSubscriptionRecoveryPolicy({
+    })
+    , new FixedCountSubscriptionRecoveryPolicy({
       maximumSize: 1,
-    }),
-    new FilteredDestination({
+    })
+    , new FilteredDestination({
       queue: "x",
       selector: "N",
       topic: "y",
-    }),
-    new DiscardingDLQBrokerPlugin({
+    })
+    , new DiscardingDLQBrokerPlugin({
       dropAll: false,
       dropOnly: "o",
       dropTemporaryQueues: true,
       dropTemporaryTopics: false,
       reportInterval: 1,
-    }),
-    new Discarding({
+    })
+    , new Discarding({
       deadLetterQueue: "1",
       enableAudit: true,
       expiration: 100,
@@ -386,24 +386,24 @@ describe("XSD Validation", () => {
       maxProducersToAudit: 1,
       processExpired: false,
       processNonPersistent: true,
-    }),
-    new ConstantPendingMessageLimitStrategy({
+    })
+    , new ConstantPendingMessageLimitStrategy({
       limit: 1,
-    }),
-    new ConditionalNetworkBridgeFilterFactory({
+    })
+    , new ConditionalNetworkBridgeFilterFactory({
       rateDuration: 1,
       rateLimit: 1,
       replayDelay: 1,
       replayWhenNoConsumers: false,
-    }),
-    new ClientIdFilterDispatchPolicy({
+    })
+    , new ClientIdFilterDispatchPolicy({
       ptpClientId: "8",
       ptpSuffix: "2",
-    }),
-    new CachedMessageGroupMapFactory({
+    })
+    , new CachedMessageGroupMapFactory({
       cacheSize: 1,
-    }),
-    new AuthorizationEntry({
+    })
+    , new AuthorizationEntry({
       admin: "D",
       queue: "V",
       read: "x",
@@ -411,16 +411,16 @@ describe("XSD Validation", () => {
       tempTopic: true,
       topic: "e",
       write: "a",
-    }),
-    new AbortSlowConsumerStrategy({
+    })
+    , new AbortSlowConsumerStrategy({
       abortConnection: false,
       checkPeriod: 1,
       ignoreNetworkConsumers: false,
       maxSlowCount: 100,
       maxSlowDuration: 100,
       name: "X",
-    }),
-    new AbortSlowAckConsumerStrategy({
+    })
+    , new AbortSlowAckConsumerStrategy({
       abortConnection: false,
       checkPeriod: 1,
       ignoreIdleConsumers: true,
@@ -429,10 +429,10 @@ describe("XSD Validation", () => {
       maxSlowDuration: 100,
       maxTimeSinceLastAck: 100,
       name: "q",
-    }),
+    })
     //, new AuthorizationMap()
     //, new AuthorizationPlugin()
-    new Broker({
+    , new Broker({
       advisorySupport: "X",
       allowTempAutoCreationOnSend: true,
       anonymousProducerAdvisorySupport: false,
@@ -463,20 +463,20 @@ describe("XSD Validation", () => {
       useVirtualDestSubs: true,
       useVirtualDestSubsOnCreation: true,
       useVirtualTopics: false,
-    }),
-    new CompositeQueue({
+    })
+    , new CompositeQueue({
       concurrentSend: false,
       copyMessage: true,
       forwardOnly: true,
       name: "H",
-    }),
-    new CompositeTopic({
+    })
+    , new CompositeTopic({
       concurrentSend: false,
       copyMessage: true,
       forwardOnly: true,
       name: "M",
-    }),
-    new NetworkConnector({
+    })
+    , new NetworkConnector({
       advisoryAckPercentage: 1,
       advisoryForFailedForward: false,
       advisoryPrefetchSize: 1,
@@ -514,8 +514,8 @@ describe("XSD Validation", () => {
       useCompression: true,
       useVirtualDestSubs: true,
       userName: "d",
-    }),
-    new PolicyEntry({
+    })
+    , new PolicyEntry({
       advisoryForConsumed: true,
       advisoryForDelivery: false,
       advisoryForDiscardingMessages: true,
@@ -568,26 +568,26 @@ describe("XSD Validation", () => {
       useConsumerPriority: false,
       usePrefetchExtension: true,
       useTopicSubscriptionInflightStats: true,
-    }),
+    })
     //, new PolicyMap()
     //, new RedeliveryPolicyMap()
-    new RedeliveryPlugin({
+    , new RedeliveryPlugin({
       fallbackToDeadLetter: true,
       sendToDlqIfMaxRetriesExceeded: true,
-    }),
+    })
     //, new RetainedMessageSubscriptionRecoveryPolicy()
-    new SharedDeadLetterStrategy({
+    , new SharedDeadLetterStrategy({
       enableAudit: true,
       expiration: 1,
       maxAuditDepth: 1,
       maxProducersToAudit: 1,
       processExpired: false,
       processNonPersistent: false,
-    }),
-    new SystemUsage({
+    })
+    , new SystemUsage({
       sendFailIfNoSpace: false,
       sendFailIfNoSpaceAfterTimeout: 1,
-    }),
+    })
     // , new VirtualDestinationInterceptor()
     //, new CachedLDAPAuthorizationMap({
     //  queueSearchBase: "q",
@@ -600,9 +600,9 @@ describe("XSD Validation", () => {
     const xsdPath = path.join(
       __dirname,
       "../../../../sources/amazon-mq-active-mq-5.18.4.xsd",
-    );
-    const result = await validateXML(node.toXmlString(), xsdPath);
+    )
+    const result = await validateXML(node.toXmlString(), xsdPath)
 
-    expect(result.valid).toBe(true);
-  });
-});
+    expect(result.valid).toBe(true)
+  })
+}) 

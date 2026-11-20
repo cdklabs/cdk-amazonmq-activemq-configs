@@ -8,6 +8,7 @@
   "scripts": {
     "build": "projen build",
     "bump": "projen bump",
+    "bump:releasable-commits": "projen bump:releasable-commits",
     "check-for-updates": "projen check-for-updates",
     "compat": "projen compat",
     "compile": "projen compile",
@@ -39,7 +40,7 @@
     "@types/node": "ts5.4",
     "@typescript-eslint/eslint-plugin": "^8",
     "@typescript-eslint/parser": "^8",
-    "commit-and-tag-version": "^12",
+    "commit-and-tag-version": "^13",
     "constructs": "^10.0.0",
     "eslint": "^9",
     "eslint-config-prettier": "^10.1.8",
@@ -66,6 +67,7 @@
   },
   "main": "lib/index.js",
   "license": "Apache-2.0",
+  "stability": "experimental",
   "publishConfig": {
     "access": "public"
   },
@@ -114,7 +116,6 @@
     }
   },
   "types": "lib/index.d.ts",
-  "stability": "experimental",
   "jsii": {
     "outdir": "dist",
     "targets": {

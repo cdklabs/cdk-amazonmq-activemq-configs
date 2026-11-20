@@ -243,16 +243,16 @@
           "exec": "cp ../../@cdklabs/xsd2jsii/src/xml-node.ts ./src/."
         },
         {
-          "exec": "echo \"/*\\nCopyright Amazon.com, Inc. or its affiliates. All Rights Reserved.\\nSPDX-License-Identifier: Apache-2.0\\n*/\" > src/generated.ts"
+          "exec": "echo \"/*\nCopyright Amazon.com, Inc. or its affiliates. All Rights Reserved.\nSPDX-License-Identifier: Apache-2.0\n*/\" > src/generated.ts"
         },
         {
           "exec": "ts-node ../xsd2jsii/bin/xsd2jsii.ts ../../../sources/amazon-mq-active-mq-5.15.16.xsd broker >> src/generated.ts"
         },
         {
-          "exec": "echo \"/*\\nCopyright Amazon.com, Inc. or its affiliates. All Rights Reserved.\\nSPDX-License-Identifier: Apache-2.0\\n*/\" > src/index.ts"
+          "exec": "echo \"/*\nCopyright Amazon.com, Inc. or its affiliates. All Rights Reserved.\nSPDX-License-Identifier: Apache-2.0\n*/\" > src/index.ts"
         },
         {
-          "exec": "echo \"export * from './xml-node'\\nexport * from './generated'\" >> src/index.ts"
+          "exec": "echo \"export * from './xml-node'\nexport * from './generated'\" >> src/index.ts"
         },
         {
           "spawn": "eslint"

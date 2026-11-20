@@ -9,7 +9,7 @@
 !/package.json
 !/LICENSE
 !/.npmignore
-logs
+/logs
 *.log
 npm-debug.log*
 yarn-debug.log*
@@ -33,14 +33,15 @@ jspm_packages/
 .yarn-integrity
 .cache
 !/.github/workflows/build.yml
+!/.github/workflows/self-mutation.yml
 !/.github/workflows/upgrade.yml
 !/.github/pull_request_template.md
 !/test/
 !/tsconfig.json
-!/tsconfig.dev.json
 !/src/
 /lib
 /dist/
+!/projenrc/tsconfig.json
 !/.github/workflows/auto-queue.yml
 !/.github/workflows/update-sources-config-xsd.yml
 __MACOSX/

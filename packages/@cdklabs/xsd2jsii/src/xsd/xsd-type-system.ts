@@ -28,8 +28,7 @@ export class XsdElementPropertyAssignableTypePatch implements IXsdTypeSystemPatc
 
   patch(rawTypes: IXsdType[]): void {
     const xsdElement = rawTypes.find((t) => t.name === this.elementName) as
-      | XsdElementType
-      | undefined;
+      XsdElementType | undefined;
 
     if (!xsdElement) {
       throw new Error(`Element ${this.elementName} not found`);

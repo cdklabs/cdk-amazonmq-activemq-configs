@@ -25,11 +25,9 @@ export class XmlNode implements IXmlNode {
 
   private _toXmlString(withNamespace: boolean = false) {
     const attrs = (this as any).attributes as
-      | { [key: string]: any }
-      | undefined;
+      { [key: string]: any } | undefined;
     const elems = (this as any).elements as
-      | { [key: string]: XmlNode | XmlNode[] | any }
-      | undefined;
+      { [key: string]: XmlNode | XmlNode[] | any } | undefined;
 
     let outString: string = "";
 

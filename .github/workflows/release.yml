@@ -312,7 +312,7 @@ jobs:
     environment: release
     if: ${{ !cancelled() && !failure() && needs.cdklabs-cdk-amazonmq-activemq-config-v5-15-16_release.result == 'success' }}
     steps:
-      - uses: actions/setup-java@v6.2.0
+      - uses: actions/setup-java@v6.3.0
         with:
           distribution: corretto
           java-version: "11"
@@ -511,7 +511,7 @@ jobs:
     environment: release
     if: ${{ !cancelled() && !failure() && needs.cdklabs-cdk-amazonmq-activemq-config-v5-16-7_release.result == 'success' }}
     steps:
-      - uses: actions/setup-java@v6.2.0
+      - uses: actions/setup-java@v6.3.0
         with:
           distribution: corretto
           java-version: "11"
@@ -710,7 +710,7 @@ jobs:
     environment: release
     if: ${{ !cancelled() && !failure() && needs.cdklabs-cdk-amazonmq-activemq-config-v5-17-6_release.result == 'success' }}
     steps:
-      - uses: actions/setup-java@v6.2.0
+      - uses: actions/setup-java@v6.3.0
         with:
           distribution: corretto
           java-version: "11"
@@ -909,7 +909,7 @@ jobs:
     environment: release
     if: ${{ !cancelled() && !failure() && needs.cdklabs-cdk-amazonmq-activemq-config-v5-18-4_release.result == 'success' }}
     steps:
-      - uses: actions/setup-java@v6.2.0
+      - uses: actions/setup-java@v6.3.0
         with:
           distribution: corretto
           java-version: "11"
@@ -1108,7 +1108,7 @@ jobs:
     environment: release
     if: ${{ !cancelled() && !failure() && needs.cdklabs-cdk-amazonmq-activemq-config-v5-19-1_release.result == 'success' }}
     steps:
-      - uses: actions/setup-java@v6.2.0
+      - uses: actions/setup-java@v6.3.0
         with:
           distribution: corretto
           java-version: "11"
